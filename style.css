@@ -172,4 +172,145 @@ body {
     border-radius: var(--radius);
     border: 1px solid var(--border);
 
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42,
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.9));
+    font-size: 0.96rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: center;
+
+    backdrop-filter: blur(14px);
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.12s ease-out,
+        box-shadow 0.12s ease-out,
+        border-color 0.12s ease-out,
+        background 0.12s ease-out,
+        opacity 0.12s ease-out;
+}
+
+/* Assicura che il testo sia centrato anche visivamente */
+
+.link-btn span {
+    display: block;
+    width: 100%;
+}
+
+.link-btn.primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    border-color: transparent;
+    color: #111827;
+    box-shadow: 0 16px 40px rgba(251, 191, 36, 0.38);
+}
+
+/* Effetto luce all'hover */
+
+.link-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 10% 0, rgba(255, 255, 255, 0.22), transparent 60%);
+    opacity: 0;
+    transform: scale(1.2);
+    pointer-events: none;
+    transition:
+        opacity 0.18s ease-out,
+        transform 0.18s ease-out;
+}
+
+/* Hover */
+
+.link-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.7);
+    border-color: rgba(148, 163, 184, 0.75);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
+}
+
+.link-btn.primary:hover {
+    box-shadow: 0 20px 56px rgba(251, 191, 36, 0.6);
+}
+
+.link-btn:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Focus tastiera */
+
+.link-btn:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+}
+
+/* Effetto "illuminato al click" */
+
+.link-btn:active {
+    transform: translateY(0);
+}
+
+/* Classe aggiunta via JS, breve flash di luce */
+
+.link-btn.clicked::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.28), transparent 55%);
+    opacity: 1;
+    pointer-events: none;
+    animation: clickFlash 260ms ease-out;
+    mix-blend-mode: screen;
+}
+
+@keyframes clickFlash {
+    0% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.12);
+    }
+}
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 18px;
+    opacity: 0.9;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 600px) {
+    .page {
+        padding-top: 52px;
+    }
+
+    .links {
+        gap: 16px;
+    }
+}
+
+/* Ridurre animazioni se l'utente lo preferisce */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    .link-btn:hover {
+        transform: none;
+    }
+}
