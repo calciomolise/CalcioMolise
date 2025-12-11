@@ -19,3 +19,12 @@ document.querySelectorAll(".link-btn").forEach((btn, index) => {
         console.log("Clic su link:", label);
     });
 });
+
+document.querySelectorAll(".kofibtn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        btn.classList.remove("clicked");
+        void btn.offsetWidth;
+        btn.classList.add("clicked");
+        setTimeout(() => btn.classList.remove("clicked"), 260);
+    });
+});
