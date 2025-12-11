@@ -1,12 +1,12 @@
 :root {
     --bg: #020617;
     --bg2: #020617;
-    --accent: #fbbf24;          /* oro caldo, più da brand calcistico */
+    --accent: #fbbf24;          /* oro caldo */
     --accent-soft: #f59e0b;
     --text: #f9fafb;
     --muted: #9ca3af;
     --border: #1f2937;
-    --radius: 16px;
+    --radius: 18px;
     --focus: #38bdf8;
 }
 
@@ -26,12 +26,12 @@ body {
 body {
     font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     background:
-        radial-gradient(circle at top, #0b1120 0, #020617 48%, #000 100%);
+        radial-gradient(circle at top, #020617 0, #020617 45%, #000 100%);
     color: var(--text);
     min-height: 100vh;
 }
 
-/* Skip link per accessibilità */
+/* Skip link */
 
 .skip-link {
     position: absolute;
@@ -56,7 +56,7 @@ body {
 /* Layout principale */
 
 .page {
-    max-width: 480px;
+    max-width: 520px;
     margin: 0 auto;
     padding: 32px 20px 40px;
     display: flex;
@@ -66,18 +66,16 @@ body {
     position: relative;
 }
 
-/* Leggero effetto alone dietro al blocco */
+/* Effetto alone sullo sfondo del blocco */
 
 .page::before {
     content: "";
     position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 80%;
-    height: 40%;
-    max-width: 420px;
-    background: radial-gradient(circle, rgba(248, 250, 252, 0.08), transparent 55%);
-    filter: blur(18px);
+    inset: 10% 10% auto 10%;
+    max-width: 480px;
+    margin: 0 auto;
+    background: radial-gradient(circle, rgba(248, 250, 252, 0.12), transparent 60%);
+    filter: blur(20px);
     opacity: 0.9;
     pointer-events: none;
     z-index: -1;
@@ -87,36 +85,47 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 }
 
 .logo {
-    width: 84px;
-    height: 84px;
+    width: 90px;
+    height: 90px;
     border-radius: 999px;
     object-fit: cover;
     border: 2px solid var(--accent);
-    margin-bottom: 12px;
-    box-shadow: 0 10px 30px rgba(248, 250, 252, 0.12);
+    margin-bottom: 16px;
+    box-shadow: 0 14px 40px rgba(248, 250, 252, 0.12);
 }
 
 .title {
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
 .subtitle {
-    margin-top: 4px;
+    margin-top: 6px;
     font-size: 0.9rem;
     color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
 }
 
-/* Tags sotto al titolo */
+/* Linea centrale sottile */
+
+.divider {
+    width: 64px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    margin: 14px auto 10px;
+}
+
+/* Tags */
 
 .tags {
-    margin-top: 12px;
+    margin-top: 8px;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -126,13 +135,18 @@ body {
 .tag {
     font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    padding: 5px 10px;
+    letter-spacing: 0.16em;
+    padding: 6px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.86));
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    background: linear-gradient(120deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.9));
     color: #e5e7eb;
     white-space: nowrap;
+}
+
+.tag.secondary {
+    border-style: dashed;
+    opacity: 0.9;
 }
 
 /* LINK BUTTONS */
@@ -140,149 +154,22 @@ body {
 .links {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     margin-bottom: 32px;
-    margin-top: 4px;
+    margin-top: 8px;
 }
 
 .link-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
 
     width: 100%;
     text-decoration: none;
     color: var(--text);
 
-    padding: 14px 16px;
+    padding: 15px 18px;
     border-radius: var(--radius);
     border: 1px solid var(--border);
 
-    background: rgba(15, 23, 42, 0.9);
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    backdrop-filter: blur(12px);
-
-    position: relative;
-    overflow: hidden;
-
-    transition:
-        transform 0.12s ease-out,
-        box-shadow 0.12s ease-out,
-        border-color 0.12s ease-out,
-        background 0.12s ease-out,
-        opacity 0.12s ease-out;
-}
-
-.link-btn .emoji {
-    font-size: 1.1rem;
-}
-
-.link-btn .label {
-    flex: 1;
-}
-
-/* Badge piccolo di stato (es. LIVE) */
-
-.link-btn .pill {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 999px;
-    background: rgba(22, 163, 74, 0.14);
-    border: 1px solid rgba(34, 197, 94, 0.65);
-    color: #bbf7d0;
-}
-
-/* Effetto luce diagonale all'hover (molto leggero) */
-
-.link-btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.18),
-        transparent 40%
-    );
-    transform: translateX(-120%);
-    opacity: 0;
-    pointer-events: none;
-    transition:
-        transform 0.4s ease-out,
-        opacity 0.2s ease-out;
-}
-
-.link-btn.primary {
-    background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-    border-color: transparent;
-    box-shadow: 0 14px 40px rgba(251, 191, 36, 0.34);
-    color: #111827;
-}
-
-/* Hover / Focus */
-
-.link-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.6);
-    border-color: rgba(148, 163, 184, 0.65);
-    background: rgba(15, 23, 42, 0.97);
-}
-
-.link-btn.primary:hover {
-    box-shadow: 0 18px 50px rgba(251, 191, 36, 0.55);
-}
-
-.link-btn:hover::before {
-    transform: translateX(10%);
-    opacity: 0.8;
-}
-
-/* Stato focus (tastiera) */
-
-.link-btn:focus-visible {
-    outline: 2px solid var(--focus);
-    outline-offset: 2px;
-}
-
-/* FOOTER */
-
-.footer {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-align: center;
-    margin-top: 16px;
-    opacity: 0.9;
-}
-
-/* RESPONSIVE */
-
-@media (min-width: 600px) {
-    .page {
-        padding-top: 48px;
-    }
-
-    .links {
-        gap: 14px;
-    }
-}
-
-/* Riduci un po' le animazioni se l'utente preferisce meno movimento */
-
-@media (prefers-reduced-motion: reduce) {
-    * {
-        scroll-behavior: auto !important;
-        transition: none !important;
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-    }
-
-    .link-btn:hover {
-        transform: none;
-    }
-}
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42,
