@@ -1,6 +1,7 @@
 :root {
-    --bg: #020617;
+    --bg1: #020617;
     --bg2: #020617;
+    --bg3: #0f172a;
     --accent: #fbbf24;          /* oro caldo */
     --accent-soft: #f59e0b;
     --text: #f9fafb;
@@ -25,10 +26,23 @@ body {
 
 body {
     font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    background:
-        radial-gradient(circle at top, #020617 0, #020617 45%, #000 100%);
     color: var(--text);
     min-height: 100vh;
+    background: radial-gradient(circle at top, #020617 0, #020617 45%, #000 100%);
+    background-size: 200% 200%;
+    animation: bgShift 22s ease-in-out infinite;
+}
+
+@keyframes bgShift {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 80%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
 }
 
 /* Skip link */
@@ -59,23 +73,32 @@ body {
     max-width: 520px;
     margin: 0 auto;
     padding: 32px 20px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     min-height: 100vh;
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-/* Effetto alone sullo sfondo del blocco */
+/* Glow centrale */
 
 .page::before {
     content: "";
     position: absolute;
-    inset: 10% 10% auto 10%;
-    max-width: 480px;
+    inset: auto;
+    top: 12%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    max-width: 520px;
     margin: 0 auto;
-    background: radial-gradient(circle, rgba(248, 250, 252, 0.12), transparent 60%);
-    filter: blur(20px);
+    background:
+        radial-gradient(circle at 20% 0, rgba(248, 250, 252, 0.10), transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(251, 191, 36, 0.16), transparent 60%);
+    filter: blur(12px);
     opacity: 0.9;
     pointer-events: none;
     z-index: -1;
@@ -84,8 +107,8 @@ body {
 /* HEADER */
 
 .header {
-    text-align: center;
     margin-bottom: 30px;
+    animation: fadeDown 600ms ease-out both;
 }
 
 .logo {
@@ -99,9 +122,9 @@ body {
 }
 
 .title {
-    font-size: 1.9rem;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
 }
 
@@ -113,19 +136,19 @@ body {
     letter-spacing: 0.18em;
 }
 
-/* Linea centrale sottile */
+/* Linea centrale */
 
 .divider {
-    width: 64px;
+    width: 74px;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    margin: 14px auto 10px;
+    margin: 16px auto 12px;
 }
 
 /* Tags */
 
 .tags {
-    margin-top: 8px;
+    margin-top: 4px;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -136,9 +159,9 @@ body {
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-    padding: 6px 14px;
+    padding: 6px 18px;
     border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.55);
     background: linear-gradient(120deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.9));
     color: #e5e7eb;
     white-space: nowrap;
@@ -146,17 +169,20 @@ body {
 
 .tag.secondary {
     border-style: dashed;
-    opacity: 0.9;
+    opacity: 0.92;
 }
 
 /* LINK BUTTONS */
 
 .links {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 14px;
-    margin-bottom: 32px;
-    margin-top: 8px;
+    margin-bottom: 26px;
+    margin-top: 4px;
+    align-items: center;
+    animation: fadeUp 700ms ease-out both;
 }
 
 .link-btn {
@@ -164,6 +190,7 @@ body {
     align-items: center;
     justify-content: center;
 
+    max-width: 420px;
     width: 100%;
     text-decoration: none;
     color: var(--text);
@@ -175,7 +202,7 @@ body {
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.9));
     font-size: 0.96rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-align: center;
 
     backdrop-filter: blur(14px);
@@ -184,36 +211,38 @@ body {
     overflow: hidden;
 
     transition:
-        transform 0.12s ease-out,
-        box-shadow 0.12s ease-out,
-        border-color 0.12s ease-out,
-        background 0.12s ease-out,
+        transform 0.14s ease-out,
+        box-shadow 0.16s ease-out,
+        border-color 0.16s ease-out,
+        background 0.16s ease-out,
         opacity 0.12s ease-out;
 }
 
-/* Assicura che il testo sia centrato anche visivamente */
+/* testo centrato realmente dentro il bottone */
 
 .link-btn span {
     display: block;
     width: 100%;
 }
 
+/* bottone principale */
+
 .link-btn.primary {
     background: linear-gradient(135deg, var(--accent), var(--accent-soft));
     border-color: transparent;
     color: #111827;
-    box-shadow: 0 16px 40px rgba(251, 191, 36, 0.38);
+    box-shadow: 0 16px 40px rgba(251, 191, 36, 0.42);
 }
 
-/* Effetto luce all'hover */
+/* bagliore morbido in idle */
 
 .link-btn::before {
     content: "";
     position: absolute;
-    inset: 0;
+    inset: -40%;
     background: radial-gradient(circle at 10% 0, rgba(255, 255, 255, 0.22), transparent 60%);
     opacity: 0;
-    transform: scale(1.2);
+    transform: translate3d(-10%, -10%, 0) scale(1.1);
     pointer-events: none;
     transition:
         opacity 0.18s ease-out,
@@ -223,19 +252,23 @@ body {
 /* Hover */
 
 .link-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.7);
-    border-color: rgba(148, 163, 184, 0.75);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.8);
+    border-color: rgba(148, 163, 184, 0.9);
+}
+
+.link-btn:not(.primary):hover {
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
 }
 
 .link-btn.primary:hover {
-    box-shadow: 0 20px 56px rgba(251, 191, 36, 0.6);
+    background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    box-shadow: 0 20px 56px rgba(251, 191, 36, 0.7);
 }
 
 .link-btn:hover::before {
     opacity: 1;
-    transform: scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
 }
 
 /* Focus tastiera */
@@ -245,23 +278,61 @@ body {
     outline-offset: 3px;
 }
 
-/* Effetto "illuminato al click" */
+/* Click */
 
 .link-btn:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.995);
 }
 
-/* Classe aggiunta via JS, breve flash di luce */
+/* Flash al click */
 
 .link-btn.clicked::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.28), transparent 55%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.32), transparent 55%);
     opacity: 1;
     pointer-events: none;
     animation: clickFlash 260ms ease-out;
     mix-blend-mode: screen;
+}
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 12px;
+    opacity: 0.9;
+    animation: fadeUp 700ms ease-out 120ms both;
+}
+
+/* Animazioni */
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.99);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(12px) scale(0.99);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 @keyframes clickFlash {
@@ -275,24 +346,12 @@ body {
     }
 }
 
-/* FOOTER */
-
-.footer {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-align: center;
-    margin-top: 18px;
-    opacity: 0.9;
-}
-
 /* RESPONSIVE */
 
 @media (min-width: 600px) {
     .page {
         padding-top: 52px;
+        padding-bottom: 52px;
     }
 
     .links {
@@ -300,7 +359,7 @@ body {
     }
 }
 
-/* Ridurre animazioni se l'utente lo preferisce */
+/* Ridurre animazioni se preferito */
 
 @media (prefers-reduced-motion: reduce) {
     * {
