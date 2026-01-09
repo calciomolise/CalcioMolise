@@ -1,133 +1,279 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <!-- Base -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Titolo -->
   <title>Calcio Molise — La voce del calcio molisano</title>
-
-  <!-- SEO base -->
-  <meta name="description" content="Calcio Molise è il punto di riferimento per il calcio molisano: notizie, risultati, classifiche, calendari, rubriche speciali e contenuti dalla community di Eccellenza e Promozione." />
+  <meta name="description" content="Calcio Molise: informazione sportiva essenziale. Output standardizzati, canali coordinati, media kit e area sponsor." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#020617" />
+  <meta name="theme-color" content="#0b0f17" />
 
-  <!-- Canonical (ok per GitHub Pages) -->
   <link rel="canonical" href="https://calciomolise.github.io/CalcioMolise/" />
-
-  <!-- Favicon / Logo -->
-  <!-- Questa è l'icona del sito (che vedi nella scheda del browser) -->
   <link rel="icon" type="image/png" href="2.png" />
   <link rel="apple-touch-icon" href="2.png" />
 
-  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Open Graph (per anteprima su WhatsApp, Instagram, Facebook, ecc.) -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="it_IT" />
   <meta property="og:site_name" content="Calcio Molise" />
   <meta property="og:title" content="Calcio Molise — La voce del calcio molisano" />
-  <meta property="og:description" content="Notizie, risultati, classifiche, calendari e rubriche dedicate al calcio molisano di Eccellenza e Promozione." />
+  <meta property="og:description" content="Informazione sportiva essenziale + media kit + area sponsor." />
   <meta property="og:url" content="https://calciomolise.github.io/CalcioMolise/" />
-
-  <!-- QUI imposti l'immagine che deve uscire nell'anteprima -->
-  <!-- Usa un URL ASSOLUTO (completo di https://...) -->
   <meta property="og:image" content="https://calciomolise.github.io/CalcioMolise/2.png" />
   <meta property="og:image:alt" content="Logo ufficiale Calcio Molise" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Calcio Molise",
+    "url":"https://calciomolise.github.io/CalcioMolise/",
+    "logo":"https://calciomolise.github.io/CalcioMolise/2.png",
+    "sameAs":[
+      "https://www.instagram.com/calciomolise_official/",
+      "https://t.me/calciomolise",
+      "https://www.youtube.com/@calciomolise",
+      "https://twitch.tv/calciomolise",
+      "https://www.facebook.com/profile.php?id=61582794197484",
+      "https://ko-fi.com/I2I01PXALC"
+    ]
+  }
+  </script>
 
-  <!-- JS -->
+  <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGLY82LKSY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FGLY82LKSY');
-</script>
-
 <body>
+  <a class="skip" href="#main">Salta al contenuto</a>
 
-    <div class="page">
-        <header class="header">
-            <!-- <img src="logo.png" alt="Logo Calcio Molise" class="logo"> -->
+  <header class="topbar" id="top">
+    <div class="shell topbar__inner">
+      <a class="brand" href="index.html" aria-label="Home Calcio Molise">
+        <img src="2.png" alt="Logo Calcio Molise" class="brand__logo" width="40" height="40" loading="eager" decoding="async" />
+        <span class="brand__stack">
+          <span class="brand__title">Calcio Molise</span>
+          <span class="brand__subtitle">La voce del calcio molisano</span>
+        </span>
+      </a>
 
-            <div class="title">Calcio Molise</div>
-            <div class="subtitle">Link ufficiali</div>
-
-            <div class="divider"></div>
-
-            <div class="tags">
-                <span class="tag">Eccellenza e Promozione</span>
-                <span class="tag secondary">News, dirette, fotografie dal campo</span>
-            </div>
-        </header>
-
-        <main class="links" id="main" aria-label="Elenco link ufficiali Calcio Molise">
-            <a href="https://twitch.tv/calciomolise"
-               class="link-btn primary"
-               target="_blank"
-               rel="noopener noreferrer">
-                <span>Dirette e talk su Twitch</span>
-            </a>
-
-            <a href="https://www.youtube.com/@calciomolise"
-                class="link-btn"
-                target="_blank"
-                rel="noopener noreferrer">
-                    <span>Canale YouTube – Video e live</span>
-            </a>
-
-            <a href="https://www.instagram.com/calciomolise_official/"
-               class="link-btn"
-               target="_blank"
-               rel="noopener noreferrer">
-                <span>Profilo Instagram ufficiale</span>
-            </a>
-
-            <a href="https://www.facebook.com/profile.php?id=61582794197484"
-               class="link-btn"
-               target="_blank"
-               rel="noopener noreferrer">
-                <span>Profilo Facebook ufficiale</span>
-            </a>
-
-            <a href="https://t.me/calciomolise"
-               class="link-btn"
-               target="_blank"
-               rel="noopener noreferrer">
-                <span>Canale Telegram – Notizie e aggiornamenti</span>
-            </a>
-
-            <a href="https://ko-fi.com/I2I01PXALC"
-                class="link-btn kofibtn"
-                target="_blank"
-                rel="noopener noreferrer">
-                <span>Se apprezzi il nostro lavoro, puoi offrirci un sostegno qui</span>
-            </a>
-
-        <footer class="footer">
-            <span>Calcio Molise – La voce del calcio molisano</span>
-            <span class="year">
-                © <span id="year"></span> · Tutti i diritti riservati
-            </span>
-        </footer>
+      <nav class="nav" aria-label="Navigazione">
+        <button class="nav__toggle" id="navToggle" type="button" aria-label="Apri menu" aria-expanded="false" aria-controls="navMenu">Menu</button>
+        <div class="nav__menu" id="navMenu">
+          <a class="is-active" href="index.html">Home</a>
+          <a href="progetto.html">Progetto</a>
+          <a href="media-kit.html">Media kit</a>
+          <a href="sponsor.html">Sponsor</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+      </nav>
     </div>
+  </header>
 
-    <script src="script.js"></script>
+  <main id="main" class="shell">
+    <!-- HERO -->
+    <section class="hero hero--home" aria-labelledby="heroTitle">
+      <div class="hero__content">
+        <div class="kickerRow">
+          <span class="kicker">Informazione sportiva essenziale</span>
+          <span class="kicker kicker--muted">Output standardizzati · Canali coordinati</span>
+        </div>
+
+        <h1 class="hero__title" id="heroTitle">Calcio Molise</h1>
+
+        <p class="hero__lead">
+          Un formato riconoscibile: <strong>matchday</strong>, <strong>full time</strong>, <strong>classifiche</strong>, <strong>risultati</strong>, aggiornamenti.
+          Struttura ordinata. Nessun rumore. Focus su chiarezza e continuità.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="progetto.html">Come funziona</a>
+          <a class="btn" href="media-kit.html">Apri media kit</a>
+          <a class="btn btn--ghost" href="sponsor.html">Area sponsor</a>
+        </div>
+
+        <div class="chips" aria-label="Canali">
+          <span class="chip"><span class="chip__dot"></span>Instagram: vetrina</span>
+          <span class="chip"><span class="chip__dot"></span>Telegram: flusso</span>
+          <span class="chip"><span class="chip__dot"></span>Sito: credibilità</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="callout callout--split">
+          <div>
+            <div class="callout__title">Collaborazioni</div>
+            <p class="callout__text">
+              Partnership e sponsor gestiti con regole chiare: placement sobrio, output programmabili e report essenziale.
+            </p>
+          </div>
+          <div class="callout__actions">
+            <a class="btn btn--primary" href="contatti.html">Richiedi info</a>
+            <a class="btn" href="sponsor.html">Vedi pacchetti</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero__aside" aria-label="Sintesi">
+        <div class="card card--elevated">
+          <div class="card__title">In sintesi</div>
+          <ul class="list list--tight">
+            <li>Stile premium: nero / oro / grigio.</li>
+            <li>Formati ripetibili → riconoscibilità.</li>
+            <li>Distribuzione multi-canale coordinata.</li>
+            <li>Area sponsor separata, ma integrata.</li>
+          </ul>
+          <div class="card__footer">
+            <a class="btn btn--full btn--primary" href="contatti.html">Richiedi info</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__title">Dove pubblica</div>
+          <div class="miniGrid">
+            <div class="mini">
+              <div class="mini__k">Instagram</div>
+              <div class="mini__v">Vetrina</div>
+            </div>
+            <div class="mini">
+              <div class="mini__k">Telegram</div>
+              <div class="mini__v">Flusso</div>
+            </div>
+            <div class="mini">
+              <div class="mini__k">Facebook</div>
+              <div class="mini__v">Copertura</div>
+            </div>
+            <div class="mini">
+              <div class="mini__k">YouTube/Twitch</div>
+              <div class="mini__v">Speciali</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SEZIONE INFORMATIVA: COSA È -->
+    <section class="section" aria-labelledby="whatTitle">
+      <header class="section__head">
+        <h2 class="section__title" id="whatTitle">Cos’è Calcio Molise</h2>
+        <p class="section__desc">
+          Un progetto editoriale indipendente con focus su informazione sportiva essenziale: leggibilità, ordine, continuità.
+        </p>
+      </header>
+
+      <div class="grid grid--3">
+        <article class="card">
+          <h3>Approccio</h3>
+          <p>Informazione rapida. Formati standard. Titoli diretti. Nessun riempitivo.</p>
+          <div class="card__meta">Obiettivo: chiarezza</div>
+        </article>
+
+        <article class="card">
+          <h3>Formato</h3>
+          <p>Contenuti ripetibili: matchday, full time, classifiche, risultati, aggiornamenti.</p>
+          <div class="card__meta">Obiettivo: riconoscibilità</div>
+        </article>
+
+        <article class="card">
+          <h3>Distribuzione</h3>
+          <p>Canali con ruoli precisi: Instagram come vetrina, Telegram come flusso, sito come hub.</p>
+          <div class="card__meta">Obiettivo: struttura</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- NUMERI -->
+    <section class="section" aria-labelledby="numbersTitle">
+      <header class="section__head">
+        <h2 class="section__title" id="numbersTitle">Numeri (aggiornabili)</h2>
+        <p class="section__desc">Riferimenti rapidi. Insight completi condivisi su richiesta.</p>
+      </header>
+
+      <div class="stats" role="list">
+        <div class="stat" role="listitem">
+          <div class="stat__value" data-count="2500" data-suffix="+">0</div>
+          <div class="stat__label">Follower Instagram</div>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="stat__value" data-count="350" data-suffix="+">0</div>
+          <div class="stat__label">Iscritti Telegram</div>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="stat__value" data-count="1400000" data-suffix="+">0</div>
+          <div class="stat__label">Visualizzazioni (ultimo mese)</div>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="stat__value" data-count="450" data-suffix="+">0</div>
+          <div class="stat__label">Audience Facebook</div>
+        </div>
+      </div>
+
+      <div class="note">
+        Il valore principale è la <strong>continuità</strong>: frequenza sostenibile + formati riconoscibili.
+      </div>
+    </section>
+
+    <!-- OUTPUT -->
+    <section class="section" aria-labelledby="outputTitle">
+      <header class="section__head">
+        <h2 class="section__title" id="outputTitle">Output editoriali</h2>
+        <p class="section__desc">Questi sono i formati che rendono il progetto replicabile e credibile.</p>
+      </header>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <h3>Core</h3>
+          <ul class="list">
+            <li>Matchday</li>
+            <li>Full Time</li>
+            <li>Classifiche / risultati</li>
+            <li>Comunicati / aggiornamenti</li>
+          </ul>
+          <div class="card__meta">Formato standard → riconoscibile</div>
+        </div>
+
+        <div class="card">
+          <h3>Speciali (quando previsti)</h3>
+          <ul class="list">
+            <li>Rubriche tematiche</li>
+            <li>Approfondimenti a evento</li>
+            <li>Dirette / talk (YouTube/Twitch)</li>
+          </ul>
+          <div class="card__meta">Solo se coerente col progetto</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINALE -->
+    <section class="section section--cta" aria-labelledby="ctaTitle">
+      <div class="ctaCard">
+        <div>
+          <h2 class="ctaCard__title" id="ctaTitle">Vuoi una collaborazione?</h2>
+          <p class="ctaCard__text">Ricevi una proposta chiara (durata + output + placement). Nessun prezzo pubblico sul sito.</p>
+        </div>
+        <div class="ctaCard__actions">
+          <a class="btn btn--primary" href="contatti.html">Richiedi info</a>
+          <a class="btn" href="sponsor.html">Vedi pacchetti</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span>Calcio Molise — La voce del calcio molisano</span>
+        <span class="muted">© <span id="year"></span></span>
+      </div>
+      <div class="footer__fine muted">
+        Progetto editoriale indipendente · contenuti senza periodicità fissa
+      </div>
+    </footer>
+  </main>
+
+  <a class="fab" href="contatti.html" aria-label="Richiedi info">Richiedi info</a>
 </body>
 </html>
