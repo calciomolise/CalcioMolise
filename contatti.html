@@ -3,256 +3,139 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calcio Molise — Contatti</title>
-  <meta name="description" content="Contatti Calcio Molise: DM Instagram o email con template precompilato. Seleziona pacchetto e genera la richiesta." />
+  <title>Contatti — Calcio Molise</title>
+  <meta name="description" content="Contatti Calcio Molise: richiesta informazioni sponsor via email o DM Instagram con testo precompilato." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0b0f17" />
+  <meta name="theme-color" content="#070A10" />
 
   <link rel="icon" type="image/png" href="2.png" />
   <link rel="apple-touch-icon" href="2.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 
-<body data-page="contatti">
-  <div class="progress" id="progress" aria-hidden="true"></div>
+<body>
   <a class="skip" href="#main">Salta al contenuto</a>
-  <div class="bg" aria-hidden="true"></div>
-
-  <div class="drawerOverlay" id="drawerOverlay" aria-hidden="true"></div>
-  <aside class="drawer" id="drawer" aria-label="Menu mobile">
-    <div class="drawer__head">
-      <div class="drawer__title">Calcio Molise</div>
-      <button class="drawer__close" id="drawerClose" type="button" aria-label="Chiudi menu">Chiudi</button>
-    </div>
-    <div class="drawer__body">
-      <nav class="drawer__nav" aria-label="Pagine">
-        <a href="index.html" data-nav>Home <span>Panoramica</span></a>
-        <a href="progetto.html" data-nav>Progetto <span>Visione</span></a>
-        <a href="media-kit.html" data-nav>Media Kit <span>Dati</span></a>
-        <a href="sponsor.html" data-nav>Sponsor <span>Pacchetti</span></a>
-        <a href="contatti.html" data-nav>Contatti <span>Richiedi</span></a>
-      </nav>
-
-      <div class="drawer__cta">
-        <button class="btn btn--primary btn--full" type="button" data-open-modal="proposal" data-package="Plus">Genera richiesta</button>
-        <a class="btn btn--full" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">Apri DM</a>
-      </div>
-    </div>
-  </aside>
 
   <header class="topbar" id="top">
-    <div class="shell topbar__inner">
+    <div class="wrap topbar__inner">
       <a class="brand" href="index.html" aria-label="Home Calcio Molise">
         <img src="2.png" alt="Logo Calcio Molise" class="brand__logo" width="40" height="40" loading="eager" decoding="async" />
-        <span class="brand__stack">
-          <span class="brand__title">Calcio Molise</span>
-          <span class="brand__subtitle">Contatti</span>
-        </span>
+        <div class="brand__text">
+          <div class="brand__title">Calcio Molise</div>
+          <div class="brand__subtitle">La voce del calcio molisano</div>
+        </div>
       </a>
 
       <nav class="nav" aria-label="Navigazione principale">
-        <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
+        <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">Menu</button>
         <div class="nav__menu" id="navMenu">
-          <a href="progetto.html" data-nav>Progetto</a>
-          <a href="media-kit.html" data-nav>Media Kit</a>
-          <a href="sponsor.html" data-nav>Sponsor</a>
-          <a href="contatti.html" data-nav>Contatti</a>
+          <a href="index.html">Home</a>
+          <a href="sponsor.html">Sponsor</a>
+          <a class="is-active" href="contatti.html">Richiedi informazioni</a>
         </div>
       </nav>
-
-      <div class="topbar__actions">
-        <a class="pill" href="media-kit.html">Media Kit</a>
-        <button class="pill pill--gold" type="button" data-open-modal="proposal" data-package="Plus">Genera richiesta</button>
-      </div>
     </div>
   </header>
 
-  <main id="main" class="shell">
+  <main id="main">
     <section class="pagehead">
-      <p class="kicker"><span class="dot" aria-hidden="true"></span>DM · Email · Template</p>
-      <h1 class="pagehead__title">Contatti</h1>
-      <p class="pagehead__lead">
-        Obiettivo: far scrivere. Metodo veloce (DM) e metodo formale (email).
-        Seleziona un pacchetto e invia una richiesta già pronta.
-      </p>
-      <div class="pagehead__cta">
-        <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Plus">Genera richiesta</button>
-        <a class="btn" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">Apri DM</a>
-        <a class="btn btn--ghost" href="#" data-email-link>Apri email</a>
+      <div class="wrap">
+        <div class="kicker">Contatto rapido</div>
+        <h1 class="pagehead__title">Richiedi informazioni</h1>
+        <p class="pagehead__lead">
+          Due opzioni. DM per velocità, email per contatto formale. Testo pronto, senza giri.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title">Seleziona il livello</h2>
+          <p class="section__desc">Se arrivi dalla pagina sponsor, il livello viene selezionato automaticamente.</p>
+        </header>
+
+        <div class="grid grid--3">
+          <button class="seg reveal" type="button" data-pkg="base" aria-pressed="false">Base</button>
+          <button class="seg reveal" type="button" data-pkg="plus" aria-pressed="false">Plus</button>
+          <button class="seg reveal" type="button" data-pkg="premium" aria-pressed="false">Premium</button>
+        </div>
+
+        <div class="note reveal">
+          <strong>Tip:</strong> il testo qui sotto si aggiorna in base al livello. Puoi copiarlo e inviarlo in DM o via email.
+        </div>
       </div>
     </section>
 
     <section class="section">
-      <header class="section__head reveal">
-        <h2 class="section__title">Canali di contatto</h2>
-        <p class="section__desc">Scegli in base al contesto. DM per velocità, email per formale/tracciabile.</p>
-      </header>
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title">Messaggio pronto</h2>
+          <p class="section__desc">Corto, professionale, orientato a proposta.</p>
+        </header>
 
-      <div class="contactGrid">
-        <article class="card reveal">
-          <h3>DM Instagram</h3>
-          <p class="muted">Conversione più alta su mobile. Ideale per iniziare la trattativa.</p>
-          <div class="card__actions">
-            <a class="btn btn--primary btn--full" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">Apri DM</a>
-            <button class="btn btn--full" type="button" data-open-modal="proposal" data-package="Plus">Genera messaggio</button>
+        <div class="card reveal">
+          <div class="field">
+            <label class="field__label" for="msg">Testo</label>
+            <textarea class="field__control" id="msg" rows="7" spellcheck="false"></textarea>
           </div>
-          <div class="card__meta">@calciomolise_official</div>
-        </article>
 
-        <article class="card card--elevated reveal">
-          <h3>Email</h3>
-          <p class="muted">Più formale. Template precompilato.</p>
-          <div class="card__actions">
-            <a class="btn btn--primary btn--full" href="#" data-email-link>Apri email</a>
-            <button class="btn btn--full" type="button" data-copy-email>Copia testo email</button>
+          <div class="ctaRow">
+            <button class="btn btn--primary" type="button" id="copyBtn">Copia testo</button>
+            <a class="btn" id="emailBtn" href="#">Invia email</a>
+            <a class="btn btn--ghost" id="igBtn" target="_blank" rel="noopener noreferrer"
+               href="https://www.instagram.com/calciomolise_official/">
+              Apri DM Instagram
+            </a>
           </div>
-          <div class="card__meta">calciomolise1@gmail.com</div>
-        </article>
-      </div>
-    </section>
 
-    <section class="section">
-      <header class="section__head reveal">
-        <h2 class="section__title">Brief rapido</h2>
-        <p class="section__desc">Se vuoi fare “azienda”, questo è il minimo. Copia e incolla nella richiesta.</p>
-      </header>
-
-      <div class="grid grid--2">
-        <article class="card reveal">
-          <h3>Dettagli (da compilare)</h3>
-          <div class="miniForm">
-            <label class="fRow">
-              <span>Brand / attività</span>
-              <input class="fInput" type="text" placeholder="Es. Azienda X" data-brief="brand" />
-            </label>
-            <label class="fRow">
-              <span>Obiettivo</span>
-              <input class="fInput" type="text" placeholder="Es. awareness / contatti / promo evento" data-brief="goal" />
-            </label>
-            <label class="fRow">
-              <span>Durata</span>
-              <input class="fInput" type="text" placeholder="Es. 1 mese / 3 mesi / evento" data-brief="duration" />
-            </label>
-            <label class="fRow">
-              <span>Canali</span>
-              <input class="fInput" type="text" placeholder="Es. Instagram + Telegram" data-brief="channels" />
-            </label>
-
-            <button class="btn btn--primary" type="button" id="copyBrief">Copia brief</button>
-            <div class="muted">Suggerimento: incollalo nella richiesta generata.</div>
-          </div>
-        </article>
-
-        <article class="card card--elevated reveal">
-          <h3>Link ufficiali</h3>
-          <div class="links" aria-label="Link ufficiali">
-            <a class="linkBtn linkBtn--primary" href="https://www.instagram.com/calciomolise_official/" target="_blank" rel="noopener noreferrer"><span>Instagram ufficiale</span><span class="linkBtn__hint">Apri</span></a>
-            <a class="linkBtn" href="https://t.me/calciomolise" target="_blank" rel="noopener noreferrer"><span>Telegram ufficiale</span><span class="linkBtn__hint">Apri</span></a>
-            <a class="linkBtn" href="https://www.youtube.com/@calciomolise" target="_blank" rel="noopener noreferrer"><span>YouTube</span><span class="linkBtn__hint">Apri</span></a>
-            <a class="linkBtn" href="https://twitch.tv/calciomolise" target="_blank" rel="noopener noreferrer"><span>Twitch</span><span class="linkBtn__hint">Apri</span></a>
-            <a class="linkBtn" href="https://ko-fi.com/I2I01PXALC" target="_blank" rel="noopener noreferrer"><span>Ko-fi</span><span class="linkBtn__hint">Apri</span></a>
-          </div>
-        </article>
-      </div>
-
-      <div class="ctaCard reveal">
-        <div>
-          <h2 class="ctaCard__title">Vuoi chiudere in fretta?</h2>
-          <p class="ctaCard__text">Genera richiesta, copia, apri DM. Fine.</p>
-        </div>
-        <div class="ctaCard__actions">
-          <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Plus">Genera richiesta</button>
-          <a class="btn" href="sponsor.html">Vedi pacchetti</a>
+          <p class="muted" style="margin-top:10px;">
+            Nota: Instagram non garantisce sempre il precompilato nel DM via link. Per questo: <strong>copia</strong> → apri Instagram → incolla.
+          </p>
         </div>
       </div>
     </section>
 
-    <footer class="footer reveal">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <div class="footer__name">Calcio Molise</div>
-          <div class="footer__tag muted">La voce del calcio molisano</div>
-        </div>
+    <section class="section section--tight">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title">Contatti diretti</h2>
+          <p class="section__desc">Link ufficiali.</p>
+        </header>
 
-        <div class="footer__cols">
-          <div class="footer__col">
-            <div class="footer__title">Sito</div>
-            <a href="index.html">Home</a>
-            <a href="progetto.html">Progetto</a>
-            <a href="media-kit.html">Media Kit</a>
-            <a href="sponsor.html">Sponsor</a>
-          </div>
-          <div class="footer__col">
-            <div class="footer__title">Contatti</div>
-            <a target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">DM Instagram</a>
-            <a href="#" data-email-link>Email</a>
-          </div>
+        <div class="linksGrid">
+          <a class="linkCard reveal" href="mailto:calciomolise1@gmail.com?subject=Richiesta%20informazioni%20-%20Calcio%20Molise">
+            <div class="linkCard__k">Email</div>
+            <div class="linkCard__v">calciomolise1@gmail.com</div>
+          </a>
+
+          <a class="linkCard reveal" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">
+            <div class="linkCard__k">Instagram</div>
+            <div class="linkCard__v">DM</div>
+          </a>
+
+          <a class="linkCard reveal" href="sponsor.html">
+            <div class="linkCard__k">Sponsor</div>
+            <div class="linkCard__v">Rivedi i livelli</div>
+          </a>
         </div>
       </div>
+    </section>
 
-      <div class="footer__bottom">
-        <span class="muted">© <span id="year"></span> Calcio Molise</span>
-        <span class="muted">Progetto editoriale indipendente · contenuti senza periodicità fissa</span>
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__bottom">
+          <div>© <span id="year"></span> Calcio Molise</div>
+          <div class="muted">La voce del calcio molisano</div>
+        </div>
       </div>
     </footer>
   </main>
-
-  <div class="mobileBar" role="region" aria-label="Azioni rapide">
-    <div class="mobileBar__inner">
-      <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Plus">Genera richiesta</button>
-      <a class="btn" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">Apri DM</a>
-    </div>
-  </div>
-
-  <button class="toTop" id="toTop" type="button" aria-label="Torna su">↑</button>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <div class="modalOverlay" id="modalOverlay" aria-hidden="true"></div>
-
-  <!-- Proposal modal -->
-  <section class="modal" id="modalProposal" role="dialog" aria-modal="true" aria-labelledby="modalProposalTitle" aria-describedby="modalProposalDesc">
-    <header class="modal__head">
-      <div>
-        <div class="modal__kicker">Richiesta sponsor</div>
-        <h2 class="modal__title" id="modalProposalTitle">Genera richiesta</h2>
-      </div>
-      <button class="modal__close" type="button" data-close-modal aria-label="Chiudi">×</button>
-    </header>
-
-    <div class="modal__body">
-      <p class="modal__desc" id="modalProposalDesc">
-        Seleziona un pacchetto: il testo si aggiorna. Copia e invia in DM, oppure apri email.
-      </p>
-
-      <div class="tabs" role="tablist" aria-label="Seleziona pacchetto">
-        <button class="tab is-active" type="button" role="tab" aria-selected="true" data-package-tab="Essential">Essential</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-package-tab="Plus">Plus</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-package-tab="Premium">Premium</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-package-tab="Telegram Focus">Telegram</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-package-tab="Evento">Evento</button>
-      </div>
-
-      <div class="modalBox">
-        <div class="modalBox__top">
-          <div class="modalBox__label">Testo pronto</div>
-          <div class="modalBox__chip" id="selectedPackageChip">Plus</div>
-        </div>
-
-        <textarea class="modalBox__text" id="proposalText" rows="10" readonly></textarea>
-
-        <div class="modalBox__actions">
-          <button class="btn btn--primary" type="button" id="copyProposal">Copia messaggio</button>
-          <a class="btn" id="openDm" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">Apri DM</a>
-          <a class="btn btn--ghost" id="openEmail" href="#">Apri email</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </body>
-</html>
+</html
