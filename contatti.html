@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contatti — Calcio Molise</title>
-  <meta name="description" content="Contatti Calcio Molise: richiesta informazioni sponsor via email o DM Instagram con testo precompilato." />
+  <title>Richiedi informazioni — Calcio Molise</title>
+  <meta name="description" content="Contatti Calcio Molise: email e DM Instagram. Template messaggio per richiesta proposta sponsor." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#070A10" />
 
@@ -22,10 +22,11 @@
 <body>
   <a class="skip" href="#main">Salta al contenuto</a>
 
-  <header class="topbar" id="top">
+  <!-- HEADER (shared) -->
+  <header class="topbar" data-topbar>
     <div class="wrap topbar__inner">
       <a class="brand" href="index.html" aria-label="Home Calcio Molise">
-        <img src="2.png" alt="Logo Calcio Molise" class="brand__logo" width="40" height="40" loading="eager" decoding="async" />
+        <img src="2.png" alt="Logo Calcio Molise" class="brand__logo" width="42" height="42" loading="eager" decoding="async" />
         <div class="brand__text">
           <div class="brand__title">Calcio Molise</div>
           <div class="brand__subtitle">La voce del calcio molisano</div>
@@ -33,12 +34,47 @@
       </a>
 
       <nav class="nav" aria-label="Navigazione principale">
-        <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">Menu</button>
-        <div class="nav__menu" id="navMenu">
-          <a href="index.html">Home</a>
-          <a href="sponsor.html">Sponsor</a>
-          <a class="is-active" href="contatti.html">Richiedi informazioni</a>
-        </div>
+        <button class="nav__toggle" type="button" id="navToggle"
+                aria-expanded="false" aria-controls="navDrawer" aria-label="Apri menu">
+          <span class="nav__toggleText">Menu</span>
+          <span class="nav__toggleIcon" aria-hidden="true">≡</span>
+        </button>
+
+        <div class="nav__overlay" id="navOverlay" hidden></div>
+
+        <aside class="nav__drawer" id="navDrawer" aria-hidden="true">
+          <div class="nav__drawerHead">
+            <div class="nav__drawerTitle">Calcio Molise</div>
+            <button class="nav__close" type="button" id="navClose" aria-label="Chiudi menu">×</button>
+          </div>
+
+          <div class="nav__group">
+            <div class="nav__label">Pagine</div>
+            <a class="nav__link" href="index.html">Home</a>
+            <a class="nav__link" href="sponsor.html">Sponsor</a>
+            <a class="nav__link is-active" href="contatti.html">Richiedi informazioni</a>
+          </div>
+
+          <div class="nav__group">
+            <div class="nav__label">Canali</div>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">Instagram</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">Telegram</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@calciomolise">YouTube</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://twitch.tv/calciomolise">Twitch</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61582794197484">Facebook</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://ko-fi.com/I2I01PXALC">Donazioni</a>
+          </div>
+
+          <div class="nav__group">
+            <div class="nav__label">Contatto</div>
+            <a class="nav__link" href="mailto:calciomolise1@gmail.com?subject=Richiesta%20informazioni%20-%20Calcio%20Molise">Email</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">DM Instagram</a>
+          </div>
+
+          <div class="nav__drawerFoot">
+            <a class="btn btn--primary btn--full" href="contatti.html">Richiedi informazioni</a>
+          </div>
+        </aside>
       </nav>
     </div>
   </header>
@@ -46,96 +82,100 @@
   <main id="main">
     <section class="pagehead">
       <div class="wrap">
-        <div class="kicker">Contatto rapido</div>
+        <p class="kicker">Contatto · Proposta · Partnership</p>
         <h1 class="pagehead__title">Richiedi informazioni</h1>
         <p class="pagehead__lead">
-          Due opzioni. DM per velocità, email per contatto formale. Testo pronto, senza giri.
+          Per ricevere una proposta: indica settore, obiettivo e livello desiderato. Risposta con proposta su misura.
         </p>
-      </div>
-    </section>
-
-    <section class="section section--tight">
-      <div class="wrap">
-        <header class="section__head reveal">
-          <h2 class="section__title">Seleziona il livello</h2>
-          <p class="section__desc">Se arrivi dalla pagina sponsor, il livello viene selezionato automaticamente.</p>
-        </header>
-
-        <div class="grid grid--3">
-          <button class="seg reveal" type="button" data-pkg="base" aria-pressed="false">Base</button>
-          <button class="seg reveal" type="button" data-pkg="plus" aria-pressed="false">Plus</button>
-          <button class="seg reveal" type="button" data-pkg="premium" aria-pressed="false">Premium</button>
-        </div>
-
-        <div class="note reveal">
-          <strong>Tip:</strong> il testo qui sotto si aggiorna in base al livello. Puoi copiarlo e inviarlo in DM o via email.
-        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap">
-        <header class="section__head reveal">
-          <h2 class="section__title">Messaggio pronto</h2>
-          <p class="section__desc">Corto, professionale, orientato a proposta.</p>
+        <header class="section__head">
+          <h2 class="section__title">Canale di contatto</h2>
+          <p class="section__desc">Email consigliata per proposte strutturate. DM per avvio rapido.</p>
         </header>
 
-        <div class="card reveal">
-          <div class="field">
-            <label class="field__label" for="msg">Testo</label>
-            <textarea class="field__control" id="msg" rows="7" spellcheck="false"></textarea>
-          </div>
+        <div class="stack">
+          <article class="card">
+            <h3>Seleziona livello</h3>
+            <label class="fieldLabel" for="levelSelect">Livello</label>
+            <select id="levelSelect" class="select" aria-label="Seleziona il livello desiderato">
+              <option value="">— Seleziona —</option>
+              <option value="Base">Base</option>
+              <option value="Plus">Plus</option>
+              <option value="Premium">Premium</option>
+            </select>
 
-          <div class="ctaRow">
-            <button class="btn btn--primary" type="button" id="copyBtn">Copia testo</button>
-            <a class="btn" id="emailBtn" href="#">Invia email</a>
-            <a class="btn btn--ghost" id="igBtn" target="_blank" rel="noopener noreferrer"
-               href="https://www.instagram.com/calciomolise_official/">
-              Apri DM Instagram
-            </a>
-          </div>
+            <div class="card__actions">
+              <a class="btn btn--primary" id="openEmailBtn" href="mailto:calciomolise1@gmail.com?subject=Richiesta%20informazioni%20-%20Calcio%20Molise">
+                Apri email
+              </a>
 
-          <p class="muted" style="margin-top:10px;">
-            Nota: Instagram non garantisce sempre il precompilato nel DM via link. Per questo: <strong>copia</strong> → apri Instagram → incolla.
-          </p>
+              <a class="btn" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">
+                Apri DM Instagram
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Template messaggio</h3>
+            <p class="muted">Copia e incolla. Funziona bene anche su mobile.</p>
+
+            <textarea class="textarea" id="msgBox" readonly rows="10"></textarea>
+
+            <div class="card__actions">
+              <button class="btn btn--primary" type="button" id="copyMsgBtn">Copia messaggio</button>
+              <button class="btn" type="button" data-copy="email">Copia testo email</button>
+            </div>
+
+            <div class="note">
+              <strong>Tip:</strong> se invii via email, aggiungi anche sito/profilo aziendale e una frase su obiettivo (awareness / brand / altro).
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--tight">
-      <div class="wrap">
-        <header class="section__head reveal">
-          <h2 class="section__title">Contatti diretti</h2>
-          <p class="section__desc">Link ufficiali.</p>
-        </header>
-
-        <div class="linksGrid">
-          <a class="linkCard reveal" href="mailto:calciomolise1@gmail.com?subject=Richiesta%20informazioni%20-%20Calcio%20Molise">
-            <div class="linkCard__k">Email</div>
-            <div class="linkCard__v">calciomolise1@gmail.com</div>
-          </a>
-
-          <a class="linkCard reveal" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">
-            <div class="linkCard__k">Instagram</div>
-            <div class="linkCard__v">DM</div>
-          </a>
-
-          <a class="linkCard reveal" href="sponsor.html">
-            <div class="linkCard__k">Sponsor</div>
-            <div class="linkCard__v">Rivedi i livelli</div>
-          </a>
-        </div>
-      </div>
-    </section>
-
+    <!-- FOOTER (shared) -->
     <footer class="footer">
-      <div class="wrap">
-        <div class="footer__bottom">
-          <div>© <span id="year"></span> Calcio Molise</div>
-          <div class="muted">La voce del calcio molisano</div>
+      <div class="wrap footer__inner">
+        <div class="footer__brand">
+          <div class="footer__title">Calcio Molise</div>
+          <div class="footer__sub">La voce del calcio molisano</div>
         </div>
+
+        <div class="footer__cols">
+          <div class="footer__col">
+            <div class="footer__label">Pagine</div>
+            <a class="footer__link" href="index.html">Home</a>
+            <a class="footer__link" href="sponsor.html">Sponsor</a>
+            <a class="footer__link" href="contatti.html">Richiedi informazioni</a>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__label">Canali</div>
+            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">Instagram</a>
+            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">Telegram</a>
+            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@calciomolise">YouTube</a>
+            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://twitch.tv/calciomolise">Twitch</a>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__label">Contatto</div>
+            <a class="footer__link" href="mailto:calciomolise1@gmail.com?subject=Richiesta%20informazioni%20-%20Calcio%20Molise">Email</a>
+            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">DM Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap footer__fine">
+        <span class="muted">© <span id="year"></span> Calcio Molise · Tutti i diritti riservati</span>
       </div>
     </footer>
+
+    <a class="fab" href="contatti.html" aria-label="Richiedi informazioni">Richiedi informazioni</a>
   </main>
 </body>
-</html
+</html>

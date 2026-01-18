@@ -1,212 +1,214 @@
-/* =========================================================
-   Calcio Molise — JS (nav, reveal, counters, contatti)
-   ========================================================= */
-
-(function () {
-  "use strict";
-
-  const qs = (s, root = document) => root.querySelector(s);
-  const qsa = (s, root = document) => Array.from(root.querySelectorAll(s));
-
+document.addEventListener("DOMContentLoaded", () => {
   // Year
-  document.addEventListener("DOMContentLoaded", () => {
-    const y = qs("#year");
-    if (y) y.textContent = new Date().getFullYear();
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
 
-    // Mobile nav
-    const toggle = qs("#navToggle");
-    const menu = qs("#navMenu");
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        const open = menu.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      });
+  // ===== Mobile Drawer Menu (robusto + focus) =====
+  const toggle = document.getElementById("navToggle");
+  const drawer = document.getElementById("navDrawer");
+  const overlay = document.getElementById("navOverlay");
+  const closeBtn = document.getElementById("navClose");
 
-      qsa("a", menu).forEach(a => {
-        a.addEventListener("click", () => {
-          menu.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
-        });
-      });
+  let lastFocus = null;
+
+  const openMenu = () => {
+    if (!drawer || !overlay || !toggle) return;
+    lastFocus = document.activeElement;
+
+    overlay.hidden = false;
+    drawer.setAttribute("aria-hidden", "false");
+    toggle.setAttribute("aria-expanded", "true");
+
+    document.body.style.overflow = "hidden";
+
+    // focus close
+    if (closeBtn) closeBtn.focus();
+  };
+
+  const closeMenu = () => {
+    if (!drawer || !overlay || !toggle) return;
+
+    overlay.hidden = true;
+    drawer.setAttribute("aria-hidden", "true");
+    toggle.setAttribute("aria-expanded", "false");
+
+    document.body.style.overflow = "";
+
+    if (lastFocus && typeof lastFocus.focus === "function") {
+      lastFocus.focus();
+    }
+  };
+
+  if (toggle && drawer && overlay) {
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener("click", closeMenu);
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    drawer.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", closeMenu);
+  }
+
+  // ===== Count-up Stats =====
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const fmt = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+  const animateCount = (el) => {
+    const target = parseInt(el.getAttribute("data-count") || "0", 10);
+    const suffix = el.getAttribute("data-suffix") || "";
+
+    if (!target) {
+      el.textContent = "0" + suffix;
+      return;
     }
 
-    // Reveal on scroll
-    const revealEls = qsa(".reveal");
-    if (revealEls.length) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      revealEls.forEach(el => io.observe(el));
+    if (reduceMotion) {
+      el.textContent = fmt(target) + suffix;
+      return;
     }
 
-    // Counters
-    const counters = qsa("[data-count]");
-    if (counters.length) {
-      const fmt = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-      const animate = (el) => {
-        const target = parseInt(el.getAttribute("data-count"), 10) || 0;
-        const suffix = el.getAttribute("data-suffix") || "";
-        const duration = 900;
-        const start = performance.now();
+    const duration = 900;
+    const start = performance.now();
 
-        const tick = (t) => {
-          const p = Math.min((t - start) / duration, 1);
-          const value = Math.floor(target * p);
-          el.textContent = fmt(value) + suffix;
-          if (p < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      };
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            animate(e.target);
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.30 });
-
-      counters.forEach(c => io.observe(c));
-    }
-
-    // Contatti page logic
-    initContatti();
-  });
-
-  function initContatti() {
-    const msg = qs("#msg");
-    const copyBtn = qs("#copyBtn");
-    const emailBtn = qs("#emailBtn");
-    const segs = qsa(".seg");
-
-    // If not on contatti page, exit
-    if (!msg || !emailBtn || !copyBtn || !segs.length) return;
-
-    const EMAIL = "calciomolise1@gmail.com";
-    const BRAND = "Calcio Molise";
-    const IG_PROFILE = "https://www.instagram.com/calciomolise_official/";
-
-    // Package presets
-    const presets = {
-      base: {
-        label: "Base",
-        subject: "Richiesta informazioni - Sponsor Base (Calcio Molise)",
-        body:
-          "Buongiorno,\n" +
-          "sono interessato a una collaborazione con Calcio Molise (livello Base).\n\n" +
-          "Settore azienda: \n" +
-          "Obiettivo: \n" +
-          "Periodo desiderato: \n" +
-          "Budget indicativo (facoltativo): \n\n" +
-          "Potete inviarmi una proposta con calendario output e modalità di integrazione del brand?\n" +
-          "Grazie."
-      },
-      plus: {
-        label: "Plus",
-        subject: "Richiesta informazioni - Sponsor Plus (Calcio Molise)",
-        body:
-          "Buongiorno,\n" +
-          "sono interessato a una collaborazione con Calcio Molise (livello Plus).\n\n" +
-          "Settore azienda: \n" +
-          "Obiettivo: \n" +
-          "Periodo desiderato: \n" +
-          "Budget indicativo (facoltativo): \n\n" +
-          "Potete inviarmi una proposta con calendario output e distribuzione multi-canale?\n" +
-          "Grazie."
-      },
-      premium: {
-        label: "Premium",
-        subject: "Richiesta informazioni - Sponsor Premium (Calcio Molise)",
-        body:
-          "Buongiorno,\n" +
-          "sono interessato a una partnership con Calcio Molise (livello Premium).\n\n" +
-          "Settore azienda: \n" +
-          "Obiettivo: \n" +
-          "Periodo desiderato: \n" +
-          "Budget indicativo (facoltativo): \n\n" +
-          "Potete inviarmi una proposta con piano completo, frequenze e reportistica?\n" +
-          "Grazie."
-      }
+    const tick = (t) => {
+      const p = Math.min((t - start) / duration, 1);
+      const value = Math.floor(target * p);
+      el.textContent = fmt(value) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
     };
 
-    // Read query param ?pkg=
-    const url = new URL(window.location.href);
-    const pkgFromUrl = (url.searchParams.get("pkg") || "").toLowerCase();
+    requestAnimationFrame(tick);
+  };
 
-    // Default package
-    let current = presets[pkgFromUrl] ? pkgFromUrl : "plus";
+  const counters = document.querySelectorAll("[data-count]");
+  if (counters.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            animateCount(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
 
-    function setPressed(pkg) {
-      segs.forEach(b => {
-        const is = b.dataset.pkg === pkg;
-        b.setAttribute("aria-pressed", is ? "true" : "false");
-      });
-    }
-
-    function buildMailto(subject, body) {
-      const s = encodeURIComponent(subject);
-      const b = encodeURIComponent(body);
-      return `mailto:${EMAIL}?subject=${s}&body=${b}`;
-    }
-
-    function updateUI() {
-      const preset = presets[current];
-      setPressed(current);
-
-      // Message box content
-      msg.value =
-        `Ciao ${BRAND},\n` +
-        `sono interessato a una collaborazione (livello ${preset.label}).\n\n` +
-        `Settore azienda: \n` +
-        `Obiettivo: \n` +
-        `Periodo desiderato: \n` +
-        `Budget indicativo (facoltativo): \n\n` +
-        `Potete inviarmi una proposta con calendario output e modalità di integrazione del brand?`;
-
-      // Email link uses full preset
-      emailBtn.href = buildMailto(preset.subject, preset.body);
-
-      // Keep IG button always reliable (profile). Prefill DM not guaranteed.
-      const igBtn = qs("#igBtn");
-      if (igBtn) igBtn.href = IG_PROFILE;
-    }
-
-    // Button events
-    segs.forEach(b => {
-      b.addEventListener("click", () => {
-        const pkg = (b.dataset.pkg || "").toLowerCase();
-        if (presets[pkg]) {
-          current = pkg;
-          // Update URL for shareability
-          const u = new URL(window.location.href);
-          u.searchParams.set("pkg", pkg);
-          window.history.replaceState({}, "", u);
-          updateUI();
-        }
-      });
-    });
-
-    copyBtn.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(msg.value);
-        copyBtn.textContent = "Copiato";
-        setTimeout(() => (copyBtn.textContent = "Copia testo"), 900);
-      } catch {
-        // Fallback
-        msg.select();
-        document.execCommand("copy");
-        copyBtn.textContent = "Copiato";
-        setTimeout(() => (copyBtn.textContent = "Copia testo"), 900);
-      }
-    });
-
-    // Initialize
-    updateUI();
+    counters.forEach((c) => io.observe(c));
   }
-})();
+
+  // ===== Contatti: template messaggio + preselect pkg =====
+  const levelSelect = document.getElementById("levelSelect");
+  const msgBox = document.getElementById("msgBox");
+  const copyMsgBtn = document.getElementById("copyMsgBtn");
+  const openEmailBtn = document.getElementById("openEmailBtn");
+
+  const getPkgFromQuery = () => {
+    try {
+      const url = new URL(window.location.href);
+      return (url.searchParams.get("pkg") || "").trim();
+    } catch {
+      return "";
+    }
+  };
+
+  const buildMessage = (level) => {
+    const lvl = level ? `Livello desiderato: ${level}\n` : "";
+    return (
+      "Ciao Calcio Molise,\n" +
+      "sono [Nome - Azienda].\n" +
+      "Settore: [settore]\n" +
+      "Obiettivo: [visibilità / brand / altro]\n" +
+      lvl +
+      "\n" +
+      "Potete inviarmi una proposta di collaborazione?"
+    );
+  };
+
+  const buildEmailSubject = (level) => {
+    const base = "Richiesta informazioni - Calcio Molise";
+    return level ? `${base} (${level})` : base;
+  };
+
+  const refreshTemplate = () => {
+    const level = levelSelect ? levelSelect.value : "";
+    const msg = buildMessage(level);
+
+    if (msgBox) msgBox.value = msg;
+
+    if (openEmailBtn) {
+      const subject = encodeURIComponent(buildEmailSubject(level));
+      const body = encodeURIComponent(msg);
+      openEmailBtn.href = `mailto:calciomolise1@gmail.com?subject=${subject}&body=${body}`;
+    }
+  };
+
+  const copyToClipboard = async (text) => {
+    // 1) moderno
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+    } catch {}
+
+    // 2) fallback compatibile (iOS/IG browser)
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.top = "-9999px";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, ta.value.length);
+      const ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      return ok;
+    } catch {
+      return false;
+    }
+  };
+
+  // init contatti
+  if (levelSelect || msgBox) {
+    const qPkg = getPkgFromQuery();
+    if (levelSelect && qPkg) {
+      const options = Array.from(levelSelect.options).map(o => o.value.toLowerCase());
+      const idx = options.indexOf(qPkg.toLowerCase());
+      if (idx >= 0) levelSelect.selectedIndex = idx;
+    }
+
+    refreshTemplate();
+
+    if (levelSelect) levelSelect.addEventListener("change", refreshTemplate);
+
+    if (copyMsgBtn) {
+      copyMsgBtn.addEventListener("click", async () => {
+        const ok = await copyToClipboard(msgBox ? msgBox.value : "");
+        copyMsgBtn.textContent = ok ? "Copiato" : "Copia non riuscita";
+        setTimeout(() => (copyMsgBtn.textContent = "Copia messaggio"), 1200);
+      });
+    }
+
+    document.querySelectorAll("[data-copy]").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const ok = await copyToClipboard(msgBox ? msgBox.value : "");
+        btn.textContent = ok ? "Copiato" : "Copia non riuscita";
+        setTimeout(() => (btn.textContent = "Copia testo email"), 1200);
+      });
+    });
+  }
+});

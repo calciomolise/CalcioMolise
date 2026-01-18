@@ -6,12 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Calcio Molise - La voce del calcio molisano</title>
-  <meta name="description" content="Calcio Molise: media calcistico con distribuzione editoriale multi-canale. Link ufficiali, media kit e collaborazioni sponsor." />
+  <meta name="description" content="Calcio Molise. Informazione calcistica territoriale e distribuzione editoriale su più canali. Link ufficiali, sponsor e contatti." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#070A10" />
 
   <link rel="canonical" href="https://calciomolise.github.io/CalcioMolise/" />
-
   <link rel="icon" type="image/png" href="2.png" />
   <link rel="apple-touch-icon" href="2.png" />
 
@@ -23,9 +22,10 @@
   <meta property="og:locale" content="it_IT" />
   <meta property="og:site_name" content="Calcio Molise" />
   <meta property="og:title" content="Calcio Molise - La voce del calcio molisano" />
-  <meta property="og:description" content="Media calcistico. Canali ufficiali, sponsor e contatti." />
+  <meta property="og:description" content="Informazione calcistica territoriale. Distribuzione editoriale su più canali. Link ufficiali e area sponsor." />
   <meta property="og:url" content="https://calciomolise.github.io/CalcioMolise/" />
   <meta property="og:image" content="https://calciomolise.github.io/CalcioMolise/2.png" />
+  <meta property="og:image:alt" content="Logo ufficiale Calcio Molise" />
 
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
@@ -34,11 +34,11 @@
 <body>
   <a class="skip" href="#main">Salta al contenuto</a>
 
-  <!-- TOPBAR -->
-  <header class="topbar" id="top">
+  <!-- HEADER (shared) -->
+  <header class="topbar" data-topbar>
     <div class="wrap topbar__inner">
       <a class="brand" href="index.html" aria-label="Home Calcio Molise">
-        <img src="2.png" alt="Logo Calcio Molise" class="brand__logo" width="40" height="40" loading="eager" decoding="async" />
+        <img src="2.png" alt="Logo Calcio Molise" class="brand__logo" width="42" height="42" loading="eager" decoding="async" />
         <div class="brand__text">
           <div class="brand__title">Calcio Molise</div>
           <div class="brand__subtitle">La voce del calcio molisano</div>
@@ -46,201 +46,206 @@
       </a>
 
       <nav class="nav" aria-label="Navigazione principale">
-        <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
-          Menu
+        <button class="nav__toggle" type="button" id="navToggle"
+                aria-expanded="false" aria-controls="navDrawer" aria-label="Apri menu">
+          <span class="nav__toggleText">Menu</span>
+          <span class="nav__toggleIcon" aria-hidden="true">≡</span>
         </button>
 
-        <div class="nav__menu" id="navMenu">
-          <a class="is-active" href="index.html">Home</a>
-          <a href="sponsor.html">Sponsor</a>
-          <a href="contatti.html" class="nav__cta">Richiedi informazioni</a>
-        </div>
+        <div class="nav__overlay" id="navOverlay" hidden></div>
+
+        <aside class="nav__drawer" id="navDrawer" aria-hidden="true">
+          <div class="nav__drawerHead">
+            <div class="nav__drawerTitle">Calcio Molise</div>
+            <button class="nav__close" type="button" id="navClose" aria-label="Chiudi menu">×</button>
+          </div>
+
+          <div class="nav__group">
+            <div class="nav__label">Pagine</div>
+            <a class="nav__link is-active" href="index.html">Home</a>
+            <a class="nav__link" href="sponsor.html">Sponsor</a>
+            <a class="nav__link" href="contatti.html">Richiedi informazioni</a>
+          </div>
+
+          <div class="nav__group">
+            <div class="nav__label">Canali</div>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">Instagram</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">Telegram</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@calciomolise">YouTube</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://twitch.tv/calciomolise">Twitch</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61582794197484">Facebook</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://ko-fi.com/I2I01PXALC">Donazioni</a>
+          </div>
+
+          <div class="nav__group">
+            <div class="nav__label">Contatto</div>
+            <a class="nav__link" href="mailto:calciomolise1@gmail.com?subject=Richiesta%20informazioni%20-%20Calcio%20Molise">Email</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">DM Instagram</a>
+          </div>
+
+          <div class="nav__drawerFoot">
+            <a class="btn btn--primary btn--full" href="contatti.html">Richiedi informazioni</a>
+          </div>
+        </aside>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section class="hero">
+    <!-- HERO (prima pagina intera, testo only) -->
+    <section class="hero hero--cover" aria-labelledby="heroTitle">
       <div class="wrap hero__inner">
-        <div class="kicker">Football media</div>
+        <div class="hero__frame" aria-hidden="true"></div>
 
-        <h1 class="hero__title reveal">
-          Calcio Molise
-        </h1>
+        <div class="hero__content">
+          <h1 class="hero__title" id="heroTitle">Calcio Molise</h1>
 
-        <p class="hero__sub reveal">
-          Informazione calcistica territoriale.
-          <span class="hero__subLine">Distribuzione editoriale su più canali.</span>
-        </p>
+          <p class="hero__tagline">La voce del calcio molisano</p>
 
-        <div class="hero__cta reveal">
-          <a class="btn btn--primary" href="contatti.html">Richiedi informazioni</a>
-          <a class="btn btn--ghost" href="sponsor.html">Area sponsor</a>
-        </div>
+          <p class="hero__lead">
+            Informazione calcistica territoriale.<br />
+            Distribuzione editoriale su più canali.
+          </p>
 
-        <div class="hero__meta reveal" aria-label="Struttura canali">
-          <div class="meta">
-            <div class="meta__k">Instagram</div>
-            <div class="meta__v">Vetrina ordinata</div>
+          <div class="hero__cta" role="group" aria-label="Azioni principali">
+            <a class="btn btn--primary" href="contatti.html">Richiedi informazioni</a>
+            <a class="btn" href="sponsor.html">Area sponsor</a>
           </div>
-          <div class="meta">
-            <div class="meta__k">Telegram</div>
-            <div class="meta__v">Flusso completo</div>
-          </div>
-          <div class="meta">
-            <div class="meta__k">Sito</div>
-            <div class="meta__v">Hub + sponsor</div>
-          </div>
-        </div>
 
-        <div class="scrollHint" aria-hidden="true">
-          <span class="scrollHint__dot"></span>
-          <span>Scorri</span>
+          <nav class="hero__index" aria-label="Sezioni della pagina">
+            <span class="hero__indexLabel">Sezioni</span>
+            <div class="hero__indexLinks">
+              <a href="#descrizione">Descrizione</a>
+              <a href="#numeri">Numeri</a>
+              <a href="#partner">Partner</a>
+              <a href="#collaborazioni">Collaborazioni</a>
+              <a class="is-strong" href="#link">Link ufficiali</a>
+            </div>
+          </nav>
         </div>
       </div>
     </section>
 
-    <!-- PERCHÉ -->
-    <section class="section">
+    <!-- DESCRIZIONE -->
+    <section class="section" id="descrizione" aria-labelledby="descTitle">
       <div class="wrap">
-        <header class="section__head reveal">
-          <h2 class="section__title">Perché Calcio Molise</h2>
+        <header class="section__head">
+          <h2 class="section__title" id="descTitle">Descrizione</h2>
           <p class="section__desc">
-            Un progetto editoriale costruito su gerarchie, continuità e leggibilità.
-            L’obiettivo è dare ordine all’informazione: rapido, riconoscibile, verificabile.
+            Progetto editoriale indipendente con formati riconoscibili e distribuzione coordinata.
+            Obiettivo: ordine, continuità e credibilità.
           </p>
         </header>
 
-        <div class="grid grid--3">
-          <article class="card reveal">
-            <h3>Standard</h3>
-            <p>Formato costante, impaginazione pulita, comunicazione senza rumore.</p>
+        <div class="stack">
+          <article class="card">
+            <h3>Metodo editoriale</h3>
+            <p>
+              Informazione essenziale e leggibile. Titoli diretti, contenuti puliti, format costante.
+              Nessuna sovrastruttura: conta la regolarità.
+            </p>
           </article>
 
-          <article class="card reveal">
+          <article class="card">
             <h3>Distribuzione</h3>
-            <p>Ogni canale ha una funzione precisa: nessuna sovrapposizione inutile.</p>
-          </article>
-
-          <article class="card reveal">
-            <h3>Affidabilità</h3>
-            <p>Contenuti ripetibili, ritmo sostenibile, output tracciabile.</p>
+            <p>
+              Canali con ruolo definito: Instagram (vetrina), Telegram (flusso), sito (hub istituzionale: link ufficiali, sponsor, contatti).
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- PRESENZA -->
-    <section class="section section--tight">
+    <!-- NUMERI (count-up) -->
+    <section class="section" id="numeri" aria-labelledby="numTitle">
       <div class="wrap">
-        <header class="section__head reveal">
-          <h2 class="section__title">Presenza digitale</h2>
+        <header class="section__head">
+          <h2 class="section__title" id="numTitle">Numeri</h2>
           <p class="section__desc">
-            Dati sintetici e aggiornabili. Insight completi disponibili su richiesta.
+            Dati aggiornabili. Valore reale: continuità del format + pubblico ricorrente.
           </p>
         </header>
 
-        <div class="statline">
-          <div class="statline__item reveal">
-            <div class="statline__k">Instagram</div>
-            <div class="statline__v" data-count="2500" data-suffix="+">0</div>
+        <div class="stats" role="list">
+          <div class="stat" role="listitem">
+            <div class="stat__value" data-count="2500" data-suffix="+">0</div>
+            <div class="stat__label">Follower Instagram</div>
           </div>
-          <div class="statline__item reveal">
-            <div class="statline__k">Telegram</div>
-            <div class="statline__v" data-count="350" data-suffix="+">0</div>
+
+          <div class="stat" role="listitem">
+            <div class="stat__value" data-count="350" data-suffix="+">0</div>
+            <div class="stat__label">Iscritti Telegram</div>
           </div>
-          <div class="statline__item reveal">
-            <div class="statline__k">Visualizzazioni</div>
-            <div class="statline__v" data-count="1400000" data-suffix="+">0</div>
+
+          <div class="stat" role="listitem">
+            <div class="stat__value" data-count="1400000" data-suffix="+">0</div>
+            <div class="stat__label">Visualizzazioni (ultimo mese)</div>
           </div>
-          <div class="statline__item reveal">
-            <div class="statline__k">Facebook</div>
-            <div class="statline__v" data-count="450" data-suffix="+">0</div>
+
+          <div class="stat" role="listitem">
+            <div class="stat__value" data-count="450" data-suffix="+">0</div>
+            <div class="stat__label">Audience Facebook</div>
           </div>
         </div>
 
-        <div class="note reveal">
-          <strong>Nota:</strong> metriche variabili durante la stagione. Il valore chiave è la continuità.
+        <div class="note" role="note">
+          <strong>Nota:</strong> i numeri possono variare durante la stagione. La metrica decisiva è la regolarità del format.
         </div>
       </div>
     </section>
 
     <!-- PARTNER -->
-    <section class="section">
+    <section class="section" id="partner" aria-labelledby="partnerTitle">
       <div class="wrap">
-        <header class="section__head reveal">
-          <h2 class="section__title">Partner</h2>
-          <p class="section__desc">Presenza sobria, istituzionale, non invasiva.</p>
+        <header class="section__head">
+          <h2 class="section__title" id="partnerTitle">Partner</h2>
+          <p class="section__desc">
+            Integrazione sobria e istituzionale: presenza coerente, non invasiva.
+          </p>
         </header>
 
-        <div class="split">
-          <article class="card reveal">
+        <div class="stack">
+          <article class="card card--featured">
+            <div class="card__tag">Main Partner</div>
+
             <h3>Euro Edil Grande</h3>
             <p>
-              Impresa edile storica con sede a Piedimonte Matese: quattro generazioni di esperienza tra costruzioni e ristrutturazioni,
+              Impresa edile storica con sede a Piedimonte Matese. Quattro generazioni di esperienza tra costruzioni e ristrutturazioni,
               con attenzione a qualità, sostenibilità e cura dei dettagli.
             </p>
 
-            <div class="ctaRow">
+            <div class="card__actions">
               <a class="btn btn--primary" target="_blank" rel="noopener noreferrer"
                  href="https://www.instagram.com/euroedilgrande?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
                 Profilo ufficiale
               </a>
-              <a class="btn" href="sponsor.html#livelli">Diventa partner</a>
+              <a class="btn" href="sponsor.html">Diventa partner</a>
             </div>
           </article>
-
-          <div class="ledger reveal" aria-label="Dati sintetici partner">
-            <div class="ledger__row">
-              <div class="ledger__k">Ruolo</div>
-              <div class="ledger__v">Main partner</div>
-            </div>
-            <div class="ledger__row">
-              <div class="ledger__k">Stile</div>
-              <div class="ledger__v">Sobrio · Coerente</div>
-            </div>
-            <div class="ledger__row">
-              <div class="ledger__k">Output</div>
-              <div class="ledger__v">Multi-canale</div>
-            </div>
-            <div class="ledger__row">
-              <div class="ledger__k">Report</div>
-              <div class="ledger__v">Verificabile</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- SPONSOR CTA -->
-    <section class="section">
+    <!-- COLLABORAZIONI -->
+    <section class="section" id="collaborazioni" aria-labelledby="collabTitle">
       <div class="wrap">
-        <header class="section__head reveal">
-          <h2 class="section__title">Collaborazioni</h2>
+        <header class="section__head">
+          <h2 class="section__title" id="collabTitle">Collaborazioni</h2>
           <p class="section__desc">
-            Calcio Molise valuta partnership con aziende che vogliono una presenza strutturata e continuativa.
+            Presenza del brand calibrata per livello: maggiore investimento = maggiore distribuzione sui canali.
           </p>
         </header>
 
-        <div class="grid grid--2">
-          <article class="card reveal">
-            <h3>Come si lavora</h3>
+        <div class="stack">
+          <article class="card">
+            <h3>Cosa ottiene un partner</h3>
             <ul class="list">
-              <li>Proposta → livello di presenza + calendario</li>
-              <li>Asset → logo + link + descrizione breve</li>
-              <li>Pubblicazione → output programmati</li>
-              <li>Report → riepilogo + screenshot insight</li>
+              <li>Integrazione del brand su output concordati (pulita, coerente)</li>
+              <li>Presenza su Instagram / Stories / Telegram in base al livello</li>
+              <li>Report semplice e verificabile (pubblicazioni + insight principali)</li>
             </ul>
-          </article>
 
-          <article class="card reveal">
-            <h3>Area sponsor</h3>
-            <p>
-              Livelli senza prezzi pubblici: invio proposta su misura.
-              Presenza del brand calibrata in base al livello concordato.
-            </p>
-            <div class="ctaRow">
+            <div class="card__actions">
               <a class="btn btn--primary" href="sponsor.html">Apri area sponsor</a>
               <a class="btn" href="contatti.html">Richiedi informazioni</a>
             </div>
@@ -249,97 +254,112 @@
       </div>
     </section>
 
-    <!-- LINK UFFICIALI -->
-    <section class="section">
+    <!-- LINK UFFICIALI (sezione più importante) -->
+    <section class="section" id="link" aria-labelledby="linkTitle">
       <div class="wrap">
-        <header class="section__head reveal">
-          <h2 class="section__title">Link ufficiali</h2>
-          <p class="section__desc">Accesso diretto ai canali pubblici.</p>
+        <header class="section__head">
+          <h2 class="section__title" id="linkTitle">Link ufficiali</h2>
+          <p class="section__desc">Accesso diretto ai canali pubblici. Nessun passaggio inutile.</p>
         </header>
 
-        <div class="linksGrid">
-          <a class="linkCard reveal" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">
-            <div class="linkCard__k">Instagram</div>
-            <div class="linkCard__v">Profilo ufficiale</div>
+        <div class="links">
+          <a class="linkCard" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">
+            <div class="linkCard__left">
+              <div class="linkCard__label">Instagram</div>
+              <div class="linkCard__desc">Profilo ufficiale</div>
+            </div>
+            <span class="linkCard__chip" aria-hidden="true">Apri</span>
           </a>
 
-          <a class="linkCard reveal" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">
-            <div class="linkCard__k">Telegram</div>
-            <div class="linkCard__v">Canale notizie</div>
+          <a class="linkCard" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">
+            <div class="linkCard__left">
+              <div class="linkCard__label">Telegram</div>
+              <div class="linkCard__desc">Canale notizie e aggiornamenti</div>
+            </div>
+            <span class="linkCard__chip" aria-hidden="true">Apri</span>
           </a>
 
-          <a class="linkCard reveal" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@calciomolise">
-            <div class="linkCard__k">YouTube</div>
-            <div class="linkCard__v">Video e live</div>
+          <a class="linkCard" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@calciomolise">
+            <div class="linkCard__left">
+              <div class="linkCard__label">YouTube</div>
+              <div class="linkCard__desc">Video e live</div>
+            </div>
+            <span class="linkCard__chip" aria-hidden="true">Apri</span>
           </a>
 
-          <a class="linkCard reveal" target="_blank" rel="noopener noreferrer" href="https://twitch.tv/calciomolise">
-            <div class="linkCard__k">Twitch</div>
-            <div class="linkCard__v">Dirette e talk</div>
+          <a class="linkCard" target="_blank" rel="noopener noreferrer" href="https://twitch.tv/calciomolise">
+            <div class="linkCard__left">
+              <div class="linkCard__label">Twitch</div>
+              <div class="linkCard__desc">Dirette e talk</div>
+            </div>
+            <span class="linkCard__chip" aria-hidden="true">Apri</span>
           </a>
 
-          <a class="linkCard reveal" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61582794197484">
-            <div class="linkCard__k">Facebook</div>
-            <div class="linkCard__v">Pagina / profilo</div>
+          <a class="linkCard" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61582794197484">
+            <div class="linkCard__left">
+              <div class="linkCard__label">Facebook</div>
+              <div class="linkCard__desc">Pagina / profilo</div>
+            </div>
+            <span class="linkCard__chip" aria-hidden="true">Apri</span>
           </a>
 
-          <a class="linkCard reveal" target="_blank" rel="noopener noreferrer" href="https://ko-fi.com/I2I01PXALC">
-            <div class="linkCard__k">Donazioni</div>
-            <div class="linkCard__v">Ko-fi</div>
+          <a class="linkCard linkCard--gold" target="_blank" rel="noopener noreferrer" href="https://ko-fi.com/I2I01PXALC">
+            <div class="linkCard__left">
+              <div class="linkCard__label">Donazioni</div>
+              <div class="linkCard__desc">Sostieni il progetto (opzionale)</div>
+            </div>
+            <span class="linkCard__chip" aria-hidden="true">Apri</span>
           </a>
+        </div>
+
+        <div class="ctaBar">
+          <div class="ctaBar__text">
+            <strong>Vuoi una proposta sponsor?</strong>
+            <div class="muted">Scrivi: settore + obiettivo + livello desiderato. Risposta con proposta su misura.</div>
+          </div>
+          <a class="btn btn--primary" href="contatti.html">Richiedi informazioni</a>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (shared) -->
     <footer class="footer">
-      <div class="wrap">
-        <div class="footer__grid">
-          <div class="footer__col">
-            <div class="footer__title">Calcio Molise</div>
-            <div class="footer__sub">La voce del calcio molisano</div>
-            <p class="footer__text">
-              Progetto editoriale indipendente. Distribuzione multi-canale con formati riconoscibili.
-            </p>
-          </div>
-
-          <div class="footer__col">
-            <div class="footer__head">Pagine</div>
-            <div class="footer__links">
-              <a href="index.html">Home</a>
-              <a href="sponsor.html">Sponsor</a>
-              <a href="contatti.html">Richiedi informazioni</a>
-            </div>
-          </div>
-
-          <div class="footer__col">
-            <div class="footer__head">Canali</div>
-            <div class="footer__links">
-              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">Instagram</a>
-              <a target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">Telegram</a>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@calciomolise">YouTube</a>
-              <a target="_blank" rel="noopener noreferrer" href="https://twitch.tv/calciomolise">Twitch</a>
-            </div>
-          </div>
-
-          <div class="footer__col">
-            <div class="footer__head">Contatto</div>
-            <div class="footer__links">
-              <a href="mailto:calciomolise1@gmail.com?subject=Richiesta%20informazioni%20-%20Calcio%20Molise">Email</a>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">DM Instagram</a>
-            </div>
-          </div>
+      <div class="wrap footer__inner">
+        <div class="footer__brand">
+          <div class="footer__title">Calcio Molise</div>
+          <div class="footer__sub">La voce del calcio molisano</div>
         </div>
 
-        <div class="footer__bottom">
-          <div>© <span id="year"></span> Calcio Molise</div>
-          <div class="muted">Tutti i diritti riservati</div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <div class="footer__label">Pagine</div>
+            <a class="footer__link" href="index.html">Home</a>
+            <a class="footer__link" href="sponsor.html">Sponsor</a>
+            <a class="footer__link" href="contatti.html">Richiedi informazioni</a>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__label">Canali</div>
+            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">Instagram</a>
+            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">Telegram</a>
+            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@calciomolise">YouTube</a>
+            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://twitch.tv/calciomolise">Twitch</a>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__label">Contatto</div>
+            <a class="footer__link" href="mailto:calciomolise1@gmail.com?subject=Richiesta%20informazioni%20-%20Calcio%20Molise">Email</a>
+            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">DM Instagram</a>
+          </div>
         </div>
       </div>
-    </footer>
-  </main>
 
-  <!-- Mobile CTA -->
-  <a class="fab" href="contatti.html" aria-label="Richiedi informazioni">Richiedi informazioni</a>
+      <div class="wrap footer__fine">
+        <span class="muted">© <span id="year"></span> Calcio Molise · Tutti i diritti riservati</span>
+      </div>
+    </footer>
+
+    <a class="fab" href="contatti.html" aria-label="Richiedi informazioni">Richiedi informazioni</a>
+  </main>
 </body>
 </html>
