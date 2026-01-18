@@ -193,3 +193,87 @@ footer{
   font-size:13px;
   color:#8f96b0;
 }
+
+/* --- Sponsor: scelta contatto --- */
+.choice{
+  margin: 18px auto 0;
+  display: grid;
+  gap: 8px;
+  max-width: 420px;
+}
+
+.choice__label{
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.choice__select{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  font-weight: 700;
+  outline: none;
+}
+
+.choice__select:focus{
+  border-color: rgba(201,164,106,.45);
+}
+
+.ctaRow{
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 520px){
+  .ctaRow{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* varianti CTA */
+.cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 18px;
+  border-radius:14px;
+  font-weight:800;
+  text-decoration:none;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, filter .15s ease;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+}
+
+.cta:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.08);
+}
+
+.cta--gold{
+  border-color: rgba(201,164,106,.55);
+  background: var(--gold);
+  color: #0b0f17;
+}
+
+.cta--gold:hover{
+  filter: brightness(1.05);
+}
+
+.cta--ghost{
+  border-color: rgba(201,164,106,.25);
+  background: rgba(201,164,106,.10);
+}
+
+.hint{
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}

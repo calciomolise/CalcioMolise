@@ -50,3 +50,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
   counters.forEach((c) => observer.observe(c));
 });
+
+// ===== Richiedi informazioni: precompila Email in base al pacchetto =====
+const pkg = document.getElementById("pkg");
+const mailLink = document.getElementById("mailLink");
+const dmLink = document.getElementById("dmLink");
+
+const buildEmail = (level) => {
+  const subject =
+    "Richiesta informazioni - Calcio Molise" +
+    (level ? " (" + level + ")" : "");
+
+  const bodyLines = [
+    "Ciao Calcio Molise,",
+    "",
+    "Sono [Nome - Azienda].",
+    "Settore: [settore]",
+    "Obiettivo: [visibilità / brand / altro]",
+    level ? "Livello desiderato: " + level : "",
+    "",
+    "Potete inviarmi una proposta di collaborazione?",
+    "",
+    "Grazie,",
+    "[Firma]"
+  ];
+
+  const body = bodyLines.filter(Boolean).join("\n");
+
+  return (
+    "mailto:calciomolise1@gmail.com" +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body)
+  );
+};
+
+const updateLinks = () => {
+  const level = pkg ? pkg.value : "";
+
+  if (mailLink) {
+    mailLink.href = buildEmail(level);
+  }
+
+  // DM Instagram: link diretto (no testo precompilato, più affidabile)
+  if (dmLink) {
+    dmLink.href = "https://ig.me/m/calciomolise_official";
+  }
+};
+
+if (pkg) {
+  pkg.addEventListener("change", updateLinks);
+  updateLinks();
+}
