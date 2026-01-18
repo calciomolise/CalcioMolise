@@ -48,9 +48,15 @@ body{
 }
 
 .wrap{
-  width:min(var(--wrap), calc(100% - 34px));
-  margin:0 auto;
-  min-width:0;
+  width: min(var(--wrap), calc(100% - 34px));
+  margin: 0 auto;
+  min-width: 0;
+}
+
+@media (min-width: 980px){
+  .wrap{
+    width: min(var(--wrap), calc(100% - 80px)); /* più margine su PC */
+  }
 }
 
 /* Accessibilità */
@@ -149,7 +155,32 @@ body{
   cursor:pointer;
 }
 .nav__toggle:hover{background: rgba(255,255,255,.07)}
-.nav__toggleIcon{opacity:.9}
+.nav__toggleIcon{
+  width: 18px;
+  height: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.nav__toggleIcon::before,
+.nav__toggleIcon::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  height:2px;
+  border-radius:2px;
+  background: rgba(255,255,255,.85);
+}
+
+.nav__toggleIcon::before{
+  top:0;
+  box-shadow: 0 5px 0 rgba(255,255,255,.85); /* linea centrale */
+}
+
+.nav__toggleIcon::after{
+  bottom:0;
+}
 
 .nav__overlay{
   position: fixed;
@@ -273,19 +304,20 @@ body{
   color: rgba(255,255,255,.78);
 }
 
-/* HERO cover */
+/* HERO cover - full page + breathing */
 .hero--cover{
-  min-height: calc(100svh - 72px);
+  min-height: calc(100svh - 78px); /* topbar */
   display:flex;
   align-items:center;
-  padding: 22px 0 26px;
+  padding: 34px 0 46px; /* più aria sopra/sotto */
 }
-.hero__inner{position:relative; width:100%; min-width:0;}
+
+/* Frame che NON tocca i bordi */
 .hero__frame{
   position:absolute;
-  inset: -30px 0 auto 0;
-  height: 520px;
-  border-radius: 26px;
+  inset: 0;              /* prima era troppo “attaccato” */
+  margin: 22px 0;        /* stacca sopra/sotto */
+  border-radius: 28px;
   border: 1px solid rgba(255,255,255,.06);
   background:
     radial-gradient(900px 520px at 18% 20%, rgba(201,164,106,.12), transparent 60%),
@@ -294,6 +326,7 @@ body{
   box-shadow: var(--shadow);
   pointer-events:none;
 }
+
 .hero__content{
   max-width: 720px;
   position:relative;
