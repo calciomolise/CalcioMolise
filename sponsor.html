@@ -3,467 +3,207 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calcio Molise — Sponsor</title>
-  <meta name="description" content="Area sponsor Calcio Molise: placement, pacchetti senza prezzi pubblici, preview mock e processo. Richiedi informazioni o genera la richiesta." />
+  <title>Sponsor — Calcio Molise</title>
+  <meta name="description" content="Area sponsor Calcio Molise: come funziona, livelli di presenza, distribuzione e richiesta proposta." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0b0f17" />
+  <meta name="theme-color" content="#070A10" />
 
   <link rel="icon" type="image/png" href="2.png" />
   <link rel="apple-touch-icon" href="2.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 
-<body data-page="sponsor">
-  <div class="progress" id="progress" aria-hidden="true"></div>
+<body>
   <a class="skip" href="#main">Salta al contenuto</a>
-  <div class="bg" aria-hidden="true"></div>
-
-  <div class="drawerOverlay" id="drawerOverlay" aria-hidden="true"></div>
-  <aside class="drawer" id="drawer" aria-label="Menu mobile">
-    <div class="drawer__head">
-      <div class="drawer__title">Calcio Molise</div>
-      <button class="drawer__close" id="drawerClose" type="button" aria-label="Chiudi menu">Chiudi</button>
-    </div>
-    <div class="drawer__body">
-      <nav class="drawer__nav" aria-label="Pagine">
-        <a href="index.html" data-nav>Home <span>Panoramica</span></a>
-        <a href="progetto.html" data-nav>Progetto <span>Visione</span></a>
-        <a href="media-kit.html" data-nav>Media Kit <span>Dati</span></a>
-        <a href="sponsor.html" data-nav>Sponsor <span>Pacchetti</span></a>
-        <a href="contatti.html" data-nav>Contatti <span>Richiedi</span></a>
-      </nav>
-
-      <div class="drawer__cta">
-        <button class="btn btn--primary btn--full" type="button" data-open-modal="proposal" data-package="Plus">Richiedi proposta</button>
-        <a class="btn btn--full" href="contatti.html">Richiedi informazioni</a>
-      </div>
-    </div>
-  </aside>
 
   <header class="topbar" id="top">
-    <div class="shell topbar__inner">
+    <div class="wrap topbar__inner">
       <a class="brand" href="index.html" aria-label="Home Calcio Molise">
         <img src="2.png" alt="Logo Calcio Molise" class="brand__logo" width="40" height="40" loading="eager" decoding="async" />
-        <span class="brand__stack">
-          <span class="brand__title">Calcio Molise</span>
-          <span class="brand__subtitle">Area sponsor</span>
-        </span>
+        <div class="brand__text">
+          <div class="brand__title">Calcio Molise</div>
+          <div class="brand__subtitle">La voce del calcio molisano</div>
+        </div>
       </a>
 
       <nav class="nav" aria-label="Navigazione principale">
-        <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
+        <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">Menu</button>
         <div class="nav__menu" id="navMenu">
-          <a href="progetto.html" data-nav>Progetto</a>
-          <a href="media-kit.html" data-nav>Media Kit</a>
-          <a href="sponsor.html" data-nav>Sponsor</a>
-          <a href="contatti.html" data-nav>Contatti</a>
+          <a href="index.html">Home</a>
+          <a class="is-active" href="sponsor.html">Sponsor</a>
+          <a href="contatti.html" class="nav__cta">Richiedi informazioni</a>
         </div>
       </nav>
-
-      <div class="topbar__actions">
-        <a class="pill" href="media-kit.html">Media Kit</a>
-        <a class="pill pill--gold" href="contatti.html">Richiedi informazioni</a>
-      </div>
     </div>
   </header>
 
-  <main id="main" class="shell">
+  <main id="main">
     <section class="pagehead">
-      <p class="kicker"><span class="dot" aria-hidden="true"></span>Placement · Pacchetti · Report</p>
-      <h1 class="pagehead__title">Sponsor</h1>
-      <p class="pagehead__lead">
-        Sponsorizzazioni gestite con regole: presenza costante, stile sobrio, report tracciabile.
-        Obiettivo: <strong>visibilità reale</strong> senza intaccare la credibilità.
-      </p>
-      <div class="pagehead__cta">
-        <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Plus">Richiedi proposta</button>
-        <a class="btn" href="contatti.html">Richiedi informazioni</a>
-        <a class="btn btn--ghost" href="media-kit.html">Apri Media Kit</a>
-      </div>
-    </section>
+      <div class="wrap">
+        <div class="kicker">Partnership · Presenza · Report</div>
+        <h1 class="pagehead__title">Area sponsor</h1>
+        <p class="pagehead__lead">
+          Calcio Molise integra i partner in modo sobrio e continuativo.
+          La presenza del brand viene calibrata in base al livello di partnership: più alto il livello, più ampia la distribuzione.
+        </p>
 
-    <section class="section">
-      <header class="section__head reveal">
-        <h2 class="section__title">Cosa ottiene uno sponsor</h2>
-        <p class="section__desc">Placement chiaro + ripetibilità + report. Niente confusione.</p>
-      </header>
-
-      <div class="grid grid--2">
-        <article class="card reveal">
-          <h3>Dentro le grafiche</h3>
-          <ul class="list">
-            <li>Logo in posizione costante</li>
-            <li>Formati: matchday / full time / classifica</li>
-            <li>Stile coerente (nero/grigio + oro)</li>
-          </ul>
-          <div class="card__meta">Core</div>
-        </article>
-
-        <article class="card card--elevated reveal">
-          <h3>Caption / Stories / Telegram</h3>
-          <ul class="list">
-            <li>Menzione pulita in caption</li>
-            <li>Stories dedicate (slot)</li>
-            <li>Telegram: slot programmati (pacchetto dedicato)</li>
-          </ul>
-          <div class="card__meta">Multi-canale</div>
-        </article>
-
-        <article class="card reveal">
-          <h3>Report</h3>
-          <ul class="list">
-            <li>Screenshot insight</li>
-            <li>Riepilogo pubblicazioni</li>
-            <li>Trasparenza: cosa è uscito e quando</li>
-          </ul>
-          <div class="card__meta">Tracciabile</div>
-        </article>
-
-        <article class="card reveal">
-          <h3>Policy anti-spam</h3>
-          <ul class="list">
-            <li>Logo presente, mai aggressivo</li>
-            <li>Nessuna promozione “urlata”</li>
-            <li>Credibilità = conversione</li>
-          </ul>
-          <div class="card__meta">Premium</div>
-        </article>
-      </div>
-
-      <div class="noteCard reveal">
-        <div class="noteCard__title">Regola</div>
-        <p class="noteCard__text">La sponsorizzazione deve sembrare parte del formato, non una sovraimposizione.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <header class="section__head reveal">
-        <h2 class="section__title">Pacchetti</h2>
-        <p class="section__desc">Senza prezzi pubblici: la proposta varia per durata, intensità e calendario.</p>
-      </header>
-
-      <div class="pricing">
-        <article class="price reveal">
-          <div class="price__top">
-            <h3>Essential</h3>
-            <p class="price__tag">Presenza pulita e controllata</p>
-          </div>
-          <div class="price__body">
-            <ul>
-              <li>Logo su 1 formato core</li>
-              <li>Menzione in caption</li>
-              <li>Stories light</li>
-              <li>Report mensile (light)</li>
-            </ul>
-            <div class="price__foot">
-              <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Essential">Richiedi proposta</button>
-              <span class="muted">Ideale per iniziare.</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="price price--featured reveal">
-          <div class="badge">Consigliato</div>
-          <div class="price__top">
-            <h3>Plus</h3>
-            <p class="price__tag">Continuità + multi-formato</p>
-          </div>
-          <div class="price__body">
-            <ul>
-              <li>Logo su più formati core</li>
-              <li>Menzione fissa in caption</li>
-              <li>Stories dedicate (slot)</li>
-              <li>Report mensile completo</li>
-            </ul>
-            <div class="price__foot">
-              <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Plus">Richiedi proposta</button>
-              <span class="muted">Best value / presenza.</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="price reveal">
-          <div class="price__top">
-            <h3>Premium</h3>
-            <p class="price__tag">Massima presenza (sempre sobria)</p>
-          </div>
-          <div class="price__body">
-            <ul>
-              <li>Logo su tutti i formati core</li>
-              <li>Stories regolari</li>
-              <li>Slot Telegram</li>
-              <li>Report + riepilogo output</li>
-            </ul>
-            <div class="price__foot">
-              <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Premium">Richiedi proposta</button>
-              <span class="muted">Per continuità forte.</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="price reveal">
-          <div class="price__top">
-            <h3>Telegram Focus</h3>
-            <p class="price__tag">Presenza sul canale news</p>
-          </div>
-          <div class="price__body">
-            <ul>
-              <li>Slot programmati Telegram</li>
-              <li>Menzione + link</li>
-              <li>Frequenza definita</li>
-              <li>Report dove disponibile</li>
-            </ul>
-            <div class="price__foot">
-              <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Telegram Focus">Richiedi proposta</button>
-              <span class="muted">Obiettivi diretti.</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="price reveal">
-          <div class="price__top">
-            <h3>Evento</h3>
-            <p class="price__tag">Coppa / derby / speciale</p>
-          </div>
-          <div class="price__body">
-            <ul>
-              <li>Branding su contenuti evento</li>
-              <li>Stories dedicate</li>
-              <li>Post riepilogo</li>
-              <li>Report fine evento</li>
-            </ul>
-            <div class="price__foot">
-              <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Evento">Richiedi proposta</button>
-              <span class="muted">Campagne a tempo.</span>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="ctaCard reveal">
-        <div>
-          <h2 class="ctaCard__title">Preferisci DM o email?</h2>
-          <p class="ctaCard__text">Seleziona pacchetto → copia messaggio → apri DM. Email per formale/tracciabile.</p>
+        <div class="pagehead__cta">
+          <a class="btn btn--primary" href="contatti.html">Richiedi informazioni</a>
+          <a class="btn btn--ghost" href="#livelli">Vedi livelli</a>
         </div>
-        <div class="ctaCard__actions">
-          <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Plus">Genera richiesta</button>
-          <a class="btn" href="contatti.html">Richiedi informazioni</a>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title">Come funziona</h2>
+          <p class="section__desc">Processo semplice e tracciabile.</p>
+        </header>
+
+        <div class="grid grid--2">
+          <article class="card reveal">
+            <h3>1) Proposta</h3>
+            <p>Definizione del livello di presenza e calendario output.</p>
+          </article>
+          <article class="card reveal">
+            <h3>2) Asset</h3>
+            <p>Logo + link + descrizione breve (2 righe). Integrazione coerente.</p>
+          </article>
+          <article class="card reveal">
+            <h3>3) Pubblicazione</h3>
+            <p>Output programmati sui canali previsti dal livello scelto.</p>
+          </article>
+          <article class="card reveal">
+            <h3>4) Report</h3>
+            <p>Riepilogo pubblicazioni + screenshot insight principali.</p>
+          </article>
+        </div>
+
+        <div class="note reveal">
+          <strong>Regola:</strong> zero spam. La credibilità viene prima: il brand è presente, ma sempre in modo editoriale e pulito.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="livelli">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title">Livelli di partnership</h2>
+          <p class="section__desc">
+            Nessun prezzo pubblicato. Invio proposta su misura.
+            Ogni livello aumenta la presenza del brand nei contenuti.
+          </p>
+        </header>
+
+        <div class="pricing">
+          <article class="price reveal">
+            <div class="price__top">
+              <h3>Base</h3>
+              <p class="price__tag">Presenza essenziale</p>
+            </div>
+            <div class="price__body">
+              <ul>
+                <li>Integrazione su una tipologia di grafica</li>
+                <li>Stories: presenza limitata e pulita</li>
+                <li>Report mensile light</li>
+              </ul>
+              <div class="price__foot">
+                <a class="btn btn--primary" href="contatti.html?pkg=base">Richiedi informazioni</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="price price--featured reveal">
+            <div class="badge">Consigliato</div>
+            <div class="price__top">
+              <h3>Plus</h3>
+              <p class="price__tag">Visibilità continuativa</p>
+            </div>
+            <div class="price__body">
+              <ul>
+                <li>Logo su più output ricorrenti</li>
+                <li>Stories programmate (2–4 / mese)</li>
+                <li>Report mensile</li>
+              </ul>
+              <div class="price__foot">
+                <a class="btn btn--primary" href="contatti.html?pkg=plus">Richiedi informazioni</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="price reveal">
+            <div class="price__top">
+              <h3>Premium</h3>
+              <p class="price__tag">Partner strutturale</p>
+            </div>
+            <div class="price__body">
+              <ul>
+                <li>Presenza ricorrente su contenuti chiave</li>
+                <li>Stories dedicate + slot premium</li>
+                <li>Telegram: inserimenti programmati</li>
+                <li>Report più completo</li>
+              </ul>
+              <div class="price__foot">
+                <a class="btn btn--primary" href="contatti.html?pkg=premium">Richiedi informazioni</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="note reveal">
+          Se vuoi partire senza vincoli lunghi: si può impostare anche una collaborazione “evento” (periodo breve) con output dedicati.
         </div>
       </div>
     </section>
 
     <section class="section">
-      <header class="section__head reveal">
-        <h2 class="section__title">Preview (mock)</h2>
-        <p class="section__desc">Esempio visivo: come appare il logo in formato “pulito”.</p>
-      </header>
+      <div class="wrap">
+        <header class="section__head reveal">
+          <h2 class="section__title">Rappresentazione del brand</h2>
+          <p class="section__desc">
+            In base al livello concordato, lo sponsor viene rappresentato nei contenuti con intensità crescente.
+          </p>
+        </header>
 
-      <div class="mockGrid">
-        <article class="mock reveal" aria-label="Mock Matchday">
-          <div class="mock__top">
-            <div class="mock__label">MATCHDAY</div>
-            <div class="mock__league">Eccellenza · 2025/26</div>
-          </div>
-          <div class="mock__mid">
-            <div class="mock__teams">
-              <div class="mock__team">CASA</div>
-              <div class="mock__vs">VS</div>
-              <div class="mock__team">TRASFERTA</div>
-            </div>
-            <div class="mock__meta">Domenica · 15:00</div>
-          </div>
-          <div class="mock__bottom">
-            <div class="mock__sponsor">
-              <span class="mock__sponsorBadge">SPONSOR</span>
-              <span class="mock__sponsorLogo">LOGO</span>
-            </div>
-            <div class="mock__brand">Calcio Molise</div>
-          </div>
-        </article>
-
-        <article class="mock mock--elevated reveal" aria-label="Mock Full Time">
-          <div class="mock__top">
-            <div class="mock__label">FULL TIME</div>
-            <div class="mock__league">Risultato · Finale</div>
-          </div>
-          <div class="mock__mid">
-            <div class="mock__score">
-              <span>CASA</span>
-              <strong>2–1</strong>
-              <span>TRASFERTA</span>
-            </div>
-            <div class="mock__meta">Highlights su canali ufficiali</div>
-          </div>
-          <div class="mock__bottom">
-            <div class="mock__sponsor">
-              <span class="mock__sponsorBadge">SPONSOR</span>
-              <span class="mock__sponsorLogo">LOGO</span>
-            </div>
-            <div class="mock__brand">Calcio Molise</div>
-          </div>
-        </article>
-
-        <article class="mock reveal" aria-label="Mock Classifica">
-          <div class="mock__top">
-            <div class="mock__label">CLASSIFICA</div>
-            <div class="mock__league">Top 5</div>
-          </div>
-          <div class="mock__mid">
-            <div class="mock__table" role="table" aria-label="Tabella classifica mock">
-              <div class="mock__row"><span>1</span><span>Squadra A</span><strong>38</strong></div>
-              <div class="mock__row"><span>2</span><span>Squadra B</span><strong>36</strong></div>
-              <div class="mock__row"><span>3</span><span>Squadra C</span><strong>33</strong></div>
-              <div class="mock__row"><span>4</span><span>Squadra D</span><strong>31</strong></div>
-              <div class="mock__row"><span>5</span><span>Squadra E</span><strong>29</strong></div>
-            </div>
-          </div>
-          <div class="mock__bottom">
-            <div class="mock__sponsor">
-              <span class="mock__sponsorBadge">SPONSOR</span>
-              <span class="mock__sponsorLogo">LOGO</span>
-            </div>
-            <div class="mock__brand">Calcio Molise</div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <header class="section__head reveal">
-        <h2 class="section__title">Processo</h2>
-        <p class="section__desc">Semplice, tracciabile, replicabile.</p>
-      </header>
-
-      <div class="steps">
-        <div class="step reveal"><div class="step__n">01</div><div class="step__b"><div class="step__t">Richiesta</div><div class="step__d">Pacchetto + durata + obiettivo.</div></div></div>
-        <div class="step reveal"><div class="step__n">02</div><div class="step__b"><div class="step__t">Proposta</div><div class="step__d">Calendario output + placement + regole.</div></div></div>
-        <div class="step reveal"><div class="step__n">03</div><div class="step__b"><div class="step__t">Asset</div><div class="step__d">Logo + link + brief (2 righe).</div></div></div>
-        <div class="step reveal"><div class="step__n">04</div><div class="step__b"><div class="step__t">Pubblicazione</div><div class="step__d">Output programmati sui canali concordati.</div></div></div>
-        <div class="step reveal"><div class="step__n">05</div><div class="step__b"><div class="step__t">Report</div><div class="step__d">Screenshot insight + riepilogo uscite.</div></div></div>
-      </div>
-
-      <div class="ctaCard reveal">
-        <div>
-          <h2 class="ctaCard__title">Pronto a partire?</h2>
-          <p class="ctaCard__text">Apri il generatore e invia la richiesta (DM o email).</p>
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <h3>Grafiche</h3>
+            <p>Logo discreto in posizione costante, coerente con lo stile.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Stories</h3>
+            <p>Slot dedicati e programmati, con testo breve e controllato.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Telegram</h3>
+            <p>Inserimenti programmati (livelli superiori): citazione + link.</p>
+          </article>
         </div>
-        <div class="ctaCard__actions">
-          <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Plus">Richiedi proposta</button>
-          <a class="btn" href="contatti.html">Richiedi informazioni</a>
+
+        <div class="ctaRow reveal">
+          <a class="btn btn--primary" href="contatti.html">Richiedi informazioni</a>
+          <a class="btn btn--ghost" href="index.html#top">Torna su</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="faq">
-      <header class="section__head reveal">
-        <h2 class="section__title">FAQ</h2>
-        <p class="section__desc">Risposte rapide.</p>
-      </header>
-
-      <div class="accordion">
-        <button class="acc reveal" aria-expanded="false"><span>Perché non ci sono prezzi?</span><span class="acc__icon">+</span></button>
-        <div class="acc__panel"><p>Durata e intensità cambiano la proposta. Si lavora su calendario output + canali + report.</p></div>
-
-        <button class="acc reveal" aria-expanded="false"><span>DM o email?</span><span class="acc__icon">+</span></button>
-        <div class="acc__panel"><p>DM converte meglio su mobile. Email è più formale e tracciabile. Il sito offre entrambe.</p></div>
-
-        <button class="acc reveal" aria-expanded="false"><span>Il logo “ovunque” rovina la qualità?</span><span class="acc__icon">+</span></button>
-        <div class="acc__panel"><p>No, perché il placement è sobrio e costante. La credibilità viene prima.</p></div>
-      </div>
-    </section>
-
-    <footer class="footer reveal">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <div class="footer__name">Calcio Molise</div>
-          <div class="footer__tag muted">La voce del calcio molisano</div>
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__bottom">
+          <div>© <span id="year"></span> Calcio Molise</div>
+          <div class="muted">La voce del calcio molisano</div>
         </div>
-
-        <div class="footer__cols">
-          <div class="footer__col">
-            <div class="footer__title">Sito</div>
-            <a href="index.html">Home</a>
-            <a href="progetto.html">Progetto</a>
-            <a href="media-kit.html">Media Kit</a>
-          </div>
-          <div class="footer__col">
-            <div class="footer__title">Contatti</div>
-            <a href="contatti.html">Richiedi informazioni</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">DM Instagram</a>
-            <a href="#" data-email-link>Email</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer__bottom">
-        <span class="muted">© <span id="year"></span> Calcio Molise</span>
-        <span class="muted">Progetto editoriale indipendente · contenuti senza periodicità fissa</span>
       </div>
     </footer>
   </main>
 
-  <div class="mobileBar" role="region" aria-label="Azioni rapide">
-    <div class="mobileBar__inner">
-      <button class="btn btn--primary" type="button" data-open-modal="proposal" data-package="Plus">Richiedi proposta</button>
-      <a class="btn" href="contatti.html">Contatti</a>
-    </div>
-  </div>
-
-  <button class="fab" type="button" data-open-modal="proposal" data-package="Plus" aria-label="Richiedi proposta">Richiedi proposta</button>
-  <button class="toTop" id="toTop" type="button" aria-label="Torna su">↑</button>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <!-- Modal overlay -->
-  <div class="modalOverlay" id="modalOverlay" aria-hidden="true"></div>
-
-  <!-- MODAL: Proposal -->
-  <section class="modal" id="modalProposal" role="dialog" aria-modal="true" aria-labelledby="modalProposalTitle" aria-describedby="modalProposalDesc">
-    <header class="modal__head">
-      <div>
-        <div class="modal__kicker">Richiesta sponsor</div>
-        <h2 class="modal__title" id="modalProposalTitle">Richiedi proposta</h2>
-      </div>
-      <button class="modal__close" type="button" data-close-modal aria-label="Chiudi">×</button>
-    </header>
-
-    <div class="modal__body">
-      <p class="modal__desc" id="modalProposalDesc">
-        Seleziona un pacchetto: il testo si aggiorna. Poi copia e invia in DM, oppure apri l’email precompilata.
-      </p>
-
-      <div class="tabs" role="tablist" aria-label="Seleziona pacchetto">
-        <button class="tab is-active" type="button" role="tab" aria-selected="true" data-package-tab="Essential">Essential</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-package-tab="Plus">Plus</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-package-tab="Premium">Premium</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-package-tab="Telegram Focus">Telegram</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-package-tab="Evento">Evento</button>
-      </div>
-
-      <div class="modalBox">
-        <div class="modalBox__top">
-          <div class="modalBox__label">Testo pronto</div>
-          <div class="modalBox__chip" id="selectedPackageChip">Plus</div>
-        </div>
-
-        <textarea class="modalBox__text" id="proposalText" rows="10" readonly></textarea>
-
-        <div class="modalBox__actions">
-          <button class="btn btn--primary" type="button" id="copyProposal">Copia messaggio</button>
-          <a class="btn" id="openDm" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">Apri DM</a>
-          <a class="btn btn--ghost" id="openEmail" href="#">Apri email</a>
-        </div>
-
-        <p class="muted" style="margin:10px 0 0">
-          DM = più veloce. Email = più formale. Entrambe disponibili.
-        </p>
-      </div>
-    </div>
-  </section>
+  <a class="fab" href="contatti.html" aria-label="Richiedi informazioni">Richiedi informazioni</a>
 </body>
 </html>
