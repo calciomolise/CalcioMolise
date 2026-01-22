@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Calcio Molise — La voce del calcio molisano</title>
-  <meta name="description" content="Calcio Molise è un progetto editoriale indipendente di informazione calcistica territoriale. Distribuzione multi-canale. Sponsor & media kit." />
+  <meta name="description" content="Calcio Molise è un progetto editoriale indipendente sul calcio territoriale: notizie, risultati, approfondimenti. Distribuzione multi-canale. Area sponsor e media kit." />
   <meta name="theme-color" content="#070A10" />
 
   <link rel="icon" type="image/png" href="2.png" />
@@ -18,6 +18,12 @@
 
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+
+  <!-- Microdata base -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:title" content="Calcio Molise" />
+  <meta property="og:description" content="Progetto editoriale indipendente sul calcio territoriale. Notizie, risultati, contenuti. Area sponsor e media kit." />
 </head>
 
 <body>
@@ -36,7 +42,7 @@
 
       <!-- DESKTOP NAV -->
       <nav class="nav nav--desktop" aria-label="Menu principale">
-        <a class="nav__item is-active" href="index.html">Home</a>
+        <a class="nav__item is-active" href="index.html" aria-current="page">Home</a>
         <a class="nav__item" href="progetto.html">Progetto</a>
         <a class="nav__item" href="sponsor.html">Sponsor</a>
         <a class="nav__item" href="media-kit.html">Media kit</a>
@@ -61,7 +67,7 @@
 
           <div class="nav__group">
             <div class="nav__label">Pagine</div>
-            <a class="nav__link is-active" href="index.html">Home</a>
+            <a class="nav__link is-active" href="index.html" aria-current="page">Home</a>
             <a class="nav__link" href="progetto.html">Progetto</a>
             <a class="nav__link" href="sponsor.html">Sponsor</a>
             <a class="nav__link" href="media-kit.html">Media kit</a>
@@ -87,49 +93,55 @@
   </header>
 
   <main id="main">
+
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" aria-label="Introduzione">
       <div class="wrap">
         <div class="hero__grid">
           <div class="hero__content">
             <p class="kicker">Progetto editoriale indipendente · Distribuzione multi-canale</p>
             <h1 class="hero__title">Calcio Molise</h1>
+
+            <!-- Copy più freddo, più “portale”, meno manifesto -->
             <p class="hero__lead">
-              Informazione calcistica territoriale, organizzata e continuativa.
-              Pubblicazione su canali distinti. Nessun tifo, nessun rumore.
+              Copertura del calcio territoriale con pubblicazione continuativa.
+              Notizie, risultati e contenuti di servizio, organizzati per canale.
             </p>
 
             <div class="hero__cta" role="group" aria-label="Azioni principali">
               <a class="btn btn--primary" href="sponsor.html">Area sponsor</a>
-              <a class="btn" href="media-kit.html">Apri media kit</a>
-              <a class="btn btn--ghost" href="contatti.html">Richiedi informazioni</a>
+              <a class="btn" href="media-kit.html">Media kit</a>
+              <a class="btn btn--ghost" href="progetto.html">Come lavoriamo</a>
+              <a class="btn btn--ghost" href="contatti.html">Contatti</a>
             </div>
 
-            <div class="hero__mini">
+            <div class="hero__mini" aria-label="Scorciatoie">
+              <a class="miniLink" href="#cosa">Sintesi</a>
               <a class="miniLink" href="#numeri">Numeri</a>
               <a class="miniLink" href="#canali">Canali</a>
-              <a class="miniLink" href="#partner">Main Partner</a>
+              <a class="miniLink" href="#partner">Partner</a>
             </div>
           </div>
 
-          <div class="hero__panel" aria-label="Quick access">
+          <!-- Quick access: rinforza percorsi “sponsor/lettore” -->
+          <div class="hero__panel" aria-label="Accesso diretto">
             <div class="panel">
               <div class="panel__title">Accesso diretto</div>
               <div class="panel__list">
-                <a class="panel__item" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">
-                  <span>Instagram</span><em>Profilo ufficiale</em>
-                </a>
-                <a class="panel__item" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">
-                  <span>Telegram</span><em>Canale aggiornamenti</em>
-                </a>
-                <a class="panel__item" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61582794197484">
-                  <span>Facebook</span><em>Pagina / profilo</em>
-                </a>
-                <a class="panel__item" href="media-kit.html">
-                  <span>Media kit</span><em>Numeri e formati</em>
+                <a class="panel__item" href="progetto.html">
+                  <span>Progetto</span><em>Visione, metodo, standard</em>
                 </a>
                 <a class="panel__item" href="sponsor.html">
                   <span>Sponsor</span><em>Partnership e processo</em>
+                </a>
+                <a class="panel__item" href="media-kit.html">
+                  <span>Media kit</span><em>Numeri, canali, formati</em>
+                </a>
+                <a class="panel__item" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">
+                  <span>Instagram</span><em>Vetrina contenuti</em>
+                </a>
+                <a class="panel__item" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">
+                  <span>Telegram</span><em>Flusso aggiornamenti</em>
                 </a>
               </div>
             </div>
@@ -138,30 +150,34 @@
       </div>
     </section>
 
-    <!-- POSIZIONAMENTO -->
-    <section class="section">
+    <!-- SINTESI (prima di “Posizionamento”: più rapido, più leggibile) -->
+    <section class="section" id="cosa">
       <div class="wrap">
         <header class="section__head">
-          <h2 class="section__title">Posizionamento</h2>
+          <h2 class="section__title">In sintesi</h2>
           <p class="section__desc">
-            Calcio Molise non è un ufficio stampa e non è un canale ufficiale delle società.
-            È un progetto editoriale indipendente, con formati ripetibili e distribuzione continuativa.
+            Struttura editoriale essenziale. Output ripetibile. Distribuzione per canale.
           </p>
         </header>
 
         <div class="grid grid--3">
           <article class="card">
-            <h3>Metodo</h3>
-            <p>Formati informativi essenziali. Gerarchia chiara. Uscite programmate.</p>
+            <h3>Contenuti</h3>
+            <p>Notizie, risultati, recap, grafiche e aggiornamenti. Priorità alla chiarezza.</p>
           </article>
           <article class="card">
-            <h3>Copertura</h3>
-            <p>Calcio territoriale. Notizie, risultati, recap e contenuti di servizio.</p>
+            <h3>Metodo</h3>
+            <p>Formati standard. Gerarchie. Uscite continuative. Tono neutro.</p>
           </article>
           <article class="card">
             <h3>Distribuzione</h3>
-            <p>Instagram come vetrina. Telegram come flusso. Facebook come estensione.</p>
+            <p>Instagram, Telegram, Facebook e canali video. Ogni canale ha funzione distinta.</p>
           </article>
+        </div>
+
+        <div class="section__cta">
+          <a class="btn" href="progetto.html">Apri Progetto</a>
+          <a class="btn btn--ghost" href="sponsor.html">Area Sponsor</a>
         </div>
       </div>
     </section>
@@ -171,10 +187,10 @@
       <div class="wrap">
         <header class="section__head">
           <h2 class="section__title">Numeri</h2>
-          <p class="section__desc">Dati sintetici. Dati organici, non sponsorizzati.</p>
+          <p class="section__desc">Riferimenti sintetici. Per dettaglio: media kit.</p>
         </header>
 
-        <div class="stats" role="list">
+        <div class="stats" role="list" aria-label="Metriche principali">
           <div class="stat" role="listitem">
             <div class="stat__value" data-count="2500" data-suffix="+">0</div>
             <div class="stat__label">Instagram</div>
@@ -188,6 +204,8 @@
             <div class="stat__label">Telegram</div>
           </div>
           <div class="stat" role="listitem">
+            <!-- Se 1.4M non è un dato reale: meglio non scriverlo qui.
+                 Lo lascio SOLO se è un numero reale e misurabile. -->
             <div class="stat__value" data-count="1400000" data-suffix="+">0</div>
             <div class="stat__label">Visualizzazioni mensili</div>
           </div>
@@ -195,7 +213,7 @@
 
         <div class="section__cta">
           <a class="btn" href="media-kit.html">Apri media kit</a>
-          <a class="btn btn--ghost" href="progetto.html">Leggi il progetto</a>
+          <a class="btn btn--ghost" href="contatti.html">Richiedi informazioni</a>
         </div>
       </div>
     </section>
@@ -205,7 +223,7 @@
       <div class="wrap">
         <header class="section__head">
           <h2 class="section__title">Canali ufficiali</h2>
-          <p class="section__desc">Accesso diretto. Nessun passaggio inutile.</p>
+          <p class="section__desc">Accesso diretto ai canali di pubblicazione.</p>
         </header>
 
         <div class="links">
@@ -231,20 +249,19 @@
       </div>
     </section>
 
-    <!-- MAIN PARTNER -->
+    <!-- PARTNER -->
     <section class="section" id="partner">
       <div class="wrap">
         <header class="section__head">
           <h2 class="section__title">Partner attuale</h2>
-          <p class="section__desc">Presenza istituzionale. Continuità.</p>
+          <p class="section__desc">Presenza integrata nei contenuti con formato stabile.</p>
         </header>
 
-        <article class="partnerCard">
+        <article class="partnerCard" aria-label="Partner principale">
           <div class="partnerCard__badge">Main Partner — Stagione in corso</div>
           <div class="partnerCard__name">Euro Edil Grande</div>
           <div class="partnerCard__text">
-            Presenza integrata nei contenuti in modo sobrio e continuativo.
-            Dettagli e formato: area sponsor.
+            Presenza editoriale sobria e continuativa. Dettagli e formati disponibili nell’area sponsor.
           </div>
           <div class="partnerCard__actions">
             <a class="btn btn--primary" href="sponsor.html">Vai a Sponsor</a>
@@ -265,7 +282,7 @@
           <div class="footer__sub">La voce del calcio molisano</div>
         </div>
 
-        <div class="footer__right">
+        <div class="footer__right" aria-label="Link footer">
           <a href="progetto.html">Progetto</a>
           <a href="sponsor.html">Sponsor</a>
           <a href="media-kit.html">Media kit</a>
@@ -277,6 +294,7 @@
         © <span id="year"></span> Calcio Molise · Tutti i diritti riservati
       </div>
     </footer>
+
   </main>
 </body>
 </html>

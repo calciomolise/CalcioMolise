@@ -87,53 +87,55 @@
   </header>
 
   <main id="main">
+
     <!-- HERO -->
     <section class="hero">
       <div class="wrap">
         <div class="hero__grid">
           <div class="hero__content">
             <p class="kicker">Media Kit</p>
-            <h1 class="hero__title">Numeri, canali, formati</h1>
+            <h1 class="hero__title">Dati e formati</h1>
             <p class="hero__lead">
-              Dati di riferimento e struttura operativa. Informazione territoriale organizzata e continuativa.
+              Numeri principali, canali e modalità di presenza. Integrazioni sobrie nei contenuti.
             </p>
 
             <div class="hero__cta" role="group" aria-label="Azioni media kit">
-              <a class="btn btn--primary" href="sponsor.html">Apri area sponsor</a>
-              <a class="btn" href="contatti.html">Contatti</a>
+              <a class="btn btn--primary" href="#contatto">Richiedi proposta</a>
+              <a class="btn" href="sponsor.html">Area sponsor</a>
             </div>
 
-            <div class="hero__mini">
+            <div class="hero__mini" aria-label="Sezioni">
               <a class="miniLink" href="#numeri">Numeri</a>
               <a class="miniLink" href="#canali">Canali</a>
               <a class="miniLink" href="#formati">Formati</a>
+              <a class="miniLink" href="#presenza">Presenza</a>
               <a class="miniLink" href="#partner">Partner</a>
             </div>
           </div>
 
           <div class="hero__panel">
             <div class="panel">
-              <div class="panel__title">Sintesi</div>
+              <div class="panel__title">Sintesi operativa</div>
               <div class="panel__list">
                 <div class="panel__item">
-                  <span>Focus</span>
-                  <em>Calcio territoriale · copertura informativa</em>
+                  <span>Copertura</span>
+                  <em>Calcio territoriale · pubblicazione continuativa</em>
                 </div>
                 <div class="panel__item">
-                  <span>Stile</span>
-                  <em>Formato essenziale, riconoscibile e continuativo</em>
+                  <span>Distribuzione</span>
+                  <em>Multi-canale · formati standard</em>
                 </div>
                 <div class="panel__item">
-                  <span>Indipendenza</span>
-                  <em>Non ufficio stampa · non canale ufficiale</em>
+                  <span>Posizionamento</span>
+                  <em>Informazione · non ufficio stampa</em>
                 </div>
                 <div class="panel__item">
-                  <span>Partnership</span>
-                  <em>Integrazioni sobrie nei contenuti</em>
+                  <span>Sponsorizzazioni</span>
+                  <em>Integrazione sobria · “Sponsored by”</em>
                 </div>
                 <a class="panel__item" href="#numeri">
-                  <span>Dati</span>
-                  <em>Organici, non sponsorizzati</em>
+                  <span>Trasparenza</span>
+                  <em>Report insight disponibili su richiesta</em>
                 </a>
               </div>
             </div>
@@ -147,31 +149,35 @@
       <div class="wrap">
         <header class="section__head">
           <h2 class="section__title">Numeri</h2>
-          <p class="section__desc">Indicatori principali. Dati organici, non sponsorizzati.</p>
+          <p class="section__desc">Indicatori principali. Dati organici.</p>
         </header>
 
-        <div class="grid grid--4">
-          <article class="card card--stat">
+        <!-- Nota: nel tuo CSS hai .stats/.stat. Qui li usiamo per coerenza -->
+        <div class="stats" role="list">
+          <article class="stat" role="listitem">
             <div class="stat__value">2.5k+</div>
-            <div class="stat__label">Follower Instagram</div>
+            <div class="stat__label">Instagram</div>
           </article>
-          <article class="card card--stat">
+
+          <article class="stat" role="listitem">
             <div class="stat__value">500+</div>
-            <div class="stat__label">Follower Facebook</div>
+            <div class="stat__label">Facebook</div>
           </article>
-          <article class="card card--stat">
+
+          <article class="stat" role="listitem">
             <div class="stat__value">350+</div>
-            <div class="stat__label">Iscritti Telegram</div>
+            <div class="stat__label">Telegram</div>
           </article>
-          <article class="card card--stat">
-            <div class="stat__value">1.400.000+</div>
-            <div class="stat__label">Visualizzazioni mensili</div>
+
+          <article class="stat" role="listitem">
+            <div class="stat__value">1.4M+</div>
+            <div class="stat__label">Views / mese</div>
           </article>
         </div>
 
-        <div class="note">
-          I numeri possono variare nel tempo. Report e screenshot insight disponibili su richiesta.
-        </div>
+        <p class="note">
+          I numeri possono variare nel tempo. Screenshot e report insight disponibili su richiesta.
+        </p>
       </div>
     </section>
 
@@ -180,45 +186,58 @@
       <div class="wrap">
         <header class="section__head">
           <h2 class="section__title">Canali di distribuzione</h2>
-          <p class="section__desc">Pubblicazione multi-canale. Struttura coerente e ripetibile.</p>
+          <p class="section__desc">Presenza coerente su più piattaforme. Stesso taglio editoriale.</p>
         </header>
 
-        <div class="grid grid--3">
-          <article class="card">
-            <h3>Instagram</h3>
-            <p>Formato principale: grafiche informative, recap, MVP, storie.</p>
-            <a class="textLink" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">Apri Instagram</a>
-          </article>
+        <!-- Usiamo le classi già presenti nel CSS: .links / .linkCard -->
+        <div class="links" aria-label="Elenco canali">
+          <a class="linkCard linkCard--gold" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">
+            <div>
+              <span>Instagram</span><br />
+              <em>Canale principale · grafiche e storie</em>
+            </div>
+            <span aria-hidden="true">↗</span>
+          </a>
 
-          <article class="card">
-            <h3>Telegram</h3>
-            <p>Aggiornamenti e citazioni. Link diretti ai contenuti.</p>
-            <a class="textLink" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">Apri Telegram</a>
-          </article>
+          <a class="linkCard" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">
+            <div>
+              <span>Telegram</span><br />
+              <em>Update rapidi · link diretti</em>
+            </div>
+            <span aria-hidden="true">↗</span>
+          </a>
 
-          <article class="card">
-            <h3>Facebook</h3>
-            <p>Replica editoriale dei contenuti e copertura estesa.</p>
-            <a class="textLink" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61582794197484">Apri Facebook</a>
-          </article>
+          <a class="linkCard" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61582794197484">
+            <div>
+              <span>Facebook</span><br />
+              <em>Distribuzione estesa · replica editoriale</em>
+            </div>
+            <span aria-hidden="true">↗</span>
+          </a>
 
-          <article class="card">
-            <h3>YouTube</h3>
-            <p>Canale in crescita. Spazio per contenuti video selezionati.</p>
-            <a class="textLink" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@CalcioMolise">Apri YouTube</a>
-          </article>
+          <a class="linkCard" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@CalcioMolise">
+            <div>
+              <span>YouTube</span><br />
+              <em>Contenuti video selezionati · crescita</em>
+            </div>
+            <span aria-hidden="true">↗</span>
+          </a>
 
-          <article class="card">
-            <h3>Twitch</h3>
-            <p>Presenza attiva. Possibilità di dirette e format live.</p>
-            <a class="textLink" target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/calciomolise">Apri Twitch</a>
-          </article>
+          <a class="linkCard" target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/calciomolise">
+            <div>
+              <span>Twitch</span><br />
+              <em>Dirette e format live · presenza attiva</em>
+            </div>
+            <span aria-hidden="true">↗</span>
+          </a>
 
-          <article class="card">
-            <h3>Supporto</h3>
-            <p>Donazioni e supporto al progetto, senza pubblicità invasiva.</p>
-            <a class="textLink" target="_blank" rel="noopener noreferrer" href="https://ko-fi.com/calciomolise">Apri Ko-fi</a>
-          </article>
+          <a class="linkCard" target="_blank" rel="noopener noreferrer" href="https://ko-fi.com/calciomolise">
+            <div>
+              <span>Supporto</span><br />
+              <em>Donazioni · sostegno al progetto</em>
+            </div>
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </section>
@@ -228,54 +247,75 @@
       <div class="wrap">
         <header class="section__head">
           <h2 class="section__title">Formati editoriali</h2>
-          <p class="section__desc">Formati semplici, riconoscibili, ripetibili. Base per le partnership.</p>
+          <p class="section__desc">Formati standard, ripetibili. Base per le partnership.</p>
         </header>
 
-        <div class="grid grid--5">
-          <article class="card card--example">
-            <div class="example__ph" aria-hidden="true">
-              <span>Matchday</span>
-              <small>Formato ricorrente</small>
-            </div>
-            <p class="example__desc">Calendario e info partita. Struttura standard.</p>
+        <div class="grid grid--3">
+          <article class="card">
+            <h3>Matchday</h3>
+            <p>Info partita. Calendario e comunicazione pre-gara.</p>
           </article>
 
-          <article class="card card--example">
-            <div class="example__ph" aria-hidden="true">
-              <span>Full Time</span>
-              <small>Formato ricorrente</small>
-            </div>
-            <p class="example__desc">Risultato finale e contesto minimo.</p>
+          <article class="card">
+            <h3>Full Time</h3>
+            <p>Risultato finale. Contesto minimo, immediato.</p>
           </article>
 
-          <article class="card card--example">
-            <div class="example__ph" aria-hidden="true">
-              <span>MVP</span>
-              <small>Formato ricorrente</small>
-            </div>
-            <p class="example__desc">Premio settimanale con community.</p>
+          <article class="card">
+            <h3>MVP</h3>
+            <p>Sondaggio community e post dedicato.</p>
           </article>
 
-          <article class="card card--example">
-            <div class="example__ph" aria-hidden="true">
-              <span>Classifiche</span>
-              <small>Formato ricorrente</small>
-            </div>
-            <p class="example__desc">Aggiornamenti ordinati e frequenti.</p>
+          <article class="card">
+            <h3>Classifiche</h3>
+            <p>Aggiornamenti periodici ordinati e leggibili.</p>
           </article>
 
-          <article class="card card--example">
-            <div class="example__ph" aria-hidden="true">
-              <span>Recap</span>
-              <small>Formato ricorrente</small>
-            </div>
-            <p class="example__desc">Sintesi giornata, notizie e focus.</p>
+          <article class="card">
+            <h3>Recap giornata</h3>
+            <p>Sintesi risultati e principali notizie.</p>
+          </article>
+
+          <article class="card">
+            <h3>Comunicazioni</h3>
+            <p>Notizie e update. Taglio informativo, neutro.</p>
           </article>
         </div>
 
-        <div class="note">
-          Le integrazioni sponsor vengono inserite in modo coerente nel layout, con dicitura “Sponsored by”.
+        <p class="note">
+          Le integrazioni sponsor sono sempre dichiarate e inserite nel layout con dicitura “Sponsored by”.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRESENZA SPONSOR -->
+    <section class="section" id="presenza">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title">Modalità di presenza</h2>
+          <p class="section__desc">Integrazione sobria nei contenuti. Nessuna pubblicità invasiva.</p>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <h3>Brand credit</h3>
+            <p>Logo e dicitura “Sponsored by” su formati selezionati.</p>
+          </article>
+
+          <article class="card">
+            <h3>Pacchetto formati</h3>
+            <p>Presenza su più uscite ricorrenti, con cadenza definita.</p>
+          </article>
+
+          <article class="card">
+            <h3>Progetto speciale</h3>
+            <p>Iniziative su periodo/tema. Struttura concordata.</p>
+          </article>
         </div>
+
+        <p class="note">
+          Le proposte sono definite su settore, periodo e livello di presenza. Nessun listino pubblico.
+        </p>
       </div>
     </section>
 
@@ -284,23 +324,23 @@
       <div class="wrap">
         <header class="section__head">
           <h2 class="section__title">Profilo editoriale</h2>
-          <p class="section__desc">Definizione chiara, senza tifo e senza rumore.</p>
+          <p class="section__desc">Definizione sintetica. Posizionamento chiaro.</p>
         </header>
 
-        <div class="grid grid--2">
+        <div class="grid grid--3">
           <article class="card">
             <h3>Cosa è</h3>
-            <p>
-              Calcio Molise è un progetto editoriale indipendente che utilizza formati informativi
-              semplici, riconoscibili e ripetibili, con distribuzione multi-canale.
-            </p>
+            <p>Progetto editoriale indipendente dedicato al calcio territoriale, con formati standard e continuità.</p>
           </article>
+
           <article class="card">
             <h3>Cosa non è</h3>
-            <p>
-              Non è un ufficio stampa e non rappresenta le società sportive.
-              Pubblica contenuti informativi con metodo e continuità.
-            </p>
+            <p>Non è ufficio stampa e non rappresenta le società. Non pubblica comunicazione di tifo.</p>
+          </article>
+
+          <article class="card">
+            <h3>Obiettivo</h3>
+            <p>Informazione ordinata, utile e riconoscibile. Copertura costante.</p>
           </article>
         </div>
       </div>
@@ -311,47 +351,53 @@
       <div class="wrap">
         <header class="section__head">
           <h2 class="section__title">Partner</h2>
-          <p class="section__desc">Collaborazioni attive e continuative.</p>
+          <p class="section__desc">Collaborazioni attive.</p>
         </header>
 
-        <div class="grid grid--2">
-          <article class="card card--partner">
-            <div class="partner__head">
-              <div>
-                <h3>Euro Edil Grande</h3>
-                <p class="muted">Main Partner — stagione in corso</p>
-              </div>
-              <span class="badge">Main Partner</span>
-            </div>
-            <p>
+        <!-- Nel CSS hai già .partnerCard. La usiamo. -->
+        <div class="grid grid--3">
+          <article class="partnerCard">
+            <div class="partnerCard__badge">Main Partner</div>
+            <div class="partnerCard__name">Euro Edil Grande</div>
+            <p class="partnerCard__text">
               Presenza integrata nei formati principali e nelle uscite programmate.
               Trattamento editoriale sobrio e riconoscibile.
             </p>
+            <div class="partnerCard__actions">
+              <a class="btn btn--primary" href="sponsor.html">Dettagli sponsor</a>
+              <a class="btn btn--ghost" href="#contatto">Richiedi proposta</a>
+            </div>
           </article>
 
           <article class="card">
-            <h3>Richiesta proposta</h3>
-            <p>
-              Le partnership vengono definite su durata e formati.
-              Nessun listino pubblico.
-            </p>
-            <div class="card__cta">
-              <a class="btn btn--primary" href="contatti.html">Contatti</a>
+            <h3>Diventa partner</h3>
+            <p>Partnership su misura. Durata e formati definiti in fase di proposta.</p>
+            <div class="section__cta">
+              <a class="btn btn--primary" href="#contatto">Contatti</a>
               <a class="btn" href="sponsor.html">Area sponsor</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Materiali</h3>
+            <p>Screenshot insight, esempi formati e report. Disponibili su richiesta.</p>
+            <div class="section__cta">
+              <a class="btn" href="#contatto">Richiedi materiali</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- CTA finale -->
-    <section class="section section--final">
+    <!-- CONTATTO -->
+    <section class="section section--final" id="contatto">
       <div class="wrap">
         <div class="final">
           <div>
-            <h2>Vuoi una proposta</h2>
-            <p class="muted">Definizione in base a settore, periodo e livello di presenza.</p>
+            <h2>Richiedi una proposta</h2>
+            <p class="muted">Risposta con proposta sintetica e opzioni di presenza.</p>
           </div>
+
           <div class="final__cta">
             <a class="btn btn--primary" href="contatti.html">Vai ai contatti</a>
             <a class="btn" href="sponsor.html">Apri sponsor</a>
@@ -380,6 +426,7 @@
         © <span id="year"></span> Calcio Molise · Tutti i diritti riservati
       </div>
     </footer>
+
   </main>
 </body>
 </html>

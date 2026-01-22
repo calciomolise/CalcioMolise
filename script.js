@@ -1,86 +1,189 @@
 // script.js
-document.addEventListener("DOMContentLoaded", () => {
-  // Year
-  const y = document.getElementById("year");
-  if (y) y.textContent = new Date().getFullYear();
+(() => {
+  "use strict";
+
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+  // Safe focusable selector (for drawer focus trap)
+  const FOCUSABLE =
+    'a[href], area[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  const lockScroll = () => {
+    // evita scroll + “salti” su mobile
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    document.body.style.touchAction = "none";
+  };
+
+  const unlockScroll = () => {
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+    document.body.style.touchAction = "";
+  };
+
+  const setYear = () => {
+    const y = $("#year");
+    if (y) y.textContent = String(new Date().getFullYear());
+  };
 
   // ===== Mobile Drawer Menu =====
-  const toggle = document.getElementById("navToggle");
-  const drawer = document.getElementById("navDrawer");
-  const overlay = document.getElementById("navOverlay");
-  const closeBtn = document.getElementById("navClose");
+  const initDrawerMenu = () => {
+    const toggle = $("#navToggle");
+    const drawer = $("#navDrawer");
+    const overlay = $("#navOverlay");
+    const closeBtn = $("#navClose");
 
-  const openMenu = () => {
-    if (!drawer || !overlay || !toggle) return;
-    overlay.hidden = false;
-    drawer.setAttribute("aria-hidden", "false");
-    toggle.setAttribute("aria-expanded", "true");
-    document.body.style.overflow = "hidden";
-  };
+    if (!toggle || !drawer || !overlay) return;
 
-  const closeMenu = () => {
-    if (!drawer || !overlay || !toggle) return;
-    overlay.hidden = true;
-    drawer.setAttribute("aria-hidden", "true");
-    toggle.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
-  };
+    let isOpen = false;
+    let lastFocused = null;
 
-  if (toggle && drawer && overlay) {
-    toggle.addEventListener("click", () => {
-      const isOpen = toggle.getAttribute("aria-expanded") === "true";
-      isOpen ? closeMenu() : openMenu();
+    const getFocusableInDrawer = () => $$(FOCUSABLE, drawer).filter((el) => el.offsetParent !== null);
+
+    const openMenu = () => {
+      if (isOpen) return;
+      isOpen = true;
+
+      lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+
+      overlay.hidden = false;
+      drawer.setAttribute("aria-hidden", "false");
+      toggle.setAttribute("aria-expanded", "true");
+
+      lockScroll();
+
+      // focus sul primo elemento utile nel drawer
+      const focusables = getFocusableInDrawer();
+      (focusables[0] || drawer).focus?.();
+    };
+
+    const closeMenu = () => {
+      if (!isOpen) return;
+      isOpen = false;
+
+      overlay.hidden = true;
+      drawer.setAttribute("aria-hidden", "true");
+      toggle.setAttribute("aria-expanded", "false");
+
+      unlockScroll();
+
+      // ripristina focus per accessibilità
+      if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+      lastFocused = null;
+    };
+
+    const toggleMenu = () => (isOpen ? closeMenu() : openMenu());
+
+    // Click
+    toggle.addEventListener("click", toggleMenu, { passive: true });
+    overlay.addEventListener("click", closeMenu, { passive: true });
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu, { passive: true });
+
+    // Chiudi quando clicchi un link nel drawer
+    $$(".nav__link, a", drawer).forEach((a) => {
+      a.addEventListener("click", closeMenu, { passive: true });
     });
 
-    overlay.addEventListener("click", closeMenu);
-    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
-
+    // Keyboard: ESC + focus trap
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
+      if (!isOpen) return;
+
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeMenu();
+        return;
+      }
+
+      if (e.key === "Tab") {
+        const focusables = getFocusableInDrawer();
+        if (!focusables.length) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        // trap
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     });
 
-    drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
-  }
-
-  window.addEventListener("resize", () => {
-    // evita glitch quando cambi viewport
-    closeMenu();
-  });
+    // Resize: chiudi per evitare stati “sporchi” tra breakpoints
+    window.addEventListener(
+      "resize",
+      () => {
+        if (isOpen) closeMenu();
+      },
+      { passive: true }
+    );
+  };
 
   // ===== Count-up Stats =====
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const fmt = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  const initCounters = () => {
+    const counters = $$("[data-count]");
+    if (!counters.length) return;
 
-  const animateCount = (el) => {
-    const target = parseInt(el.getAttribute("data-count") || "0", 10);
-    const suffix = el.getAttribute("data-suffix") || "";
-    if (!target) { el.textContent = "0" + suffix; return; }
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (reduceMotion) { el.textContent = fmt(target) + suffix; return; }
+    const formatIt = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-    const duration = 900;
-    const start = performance.now();
+    const animateCount = (el) => {
+      const raw = el.getAttribute("data-count");
+      const target = Number.parseInt(raw || "0", 10);
+      const suffix = el.getAttribute("data-suffix") || "";
 
-    const tick = (t) => {
-      const p = Math.min((t - start) / duration, 1);
-      const value = Math.floor(target * p);
-      el.textContent = fmt(value) + suffix;
-      if (p < 1) requestAnimationFrame(tick);
+      if (!Number.isFinite(target) || target <= 0) {
+        el.textContent = "0" + suffix;
+        return;
+      }
+
+      if (reduceMotion) {
+        el.textContent = formatIt(target) + suffix;
+        return;
+      }
+
+      const duration = 900;
+      const start = performance.now();
+
+      const tick = (t) => {
+        const p = Math.min((t - start) / duration, 1);
+        const value = Math.floor(target * p);
+        el.textContent = formatIt(value) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+
+      requestAnimationFrame(tick);
     };
-    requestAnimationFrame(tick);
-  };
 
-  const counters = document.querySelectorAll("[data-count]");
-  if (counters.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          animateCount(e.target);
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.35 });
+    // Fallback se IntersectionObserver non c’è
+    if (!("IntersectionObserver" in window)) {
+      counters.forEach(animateCount);
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
 
     counters.forEach((c) => io.observe(c));
-  }
-});
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setYear();
+    initDrawerMenu();
+    initCounters();
+  });
+})();

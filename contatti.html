@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Contatti — Calcio Molise</title>
-  <meta name="description" content="Contatti ufficiali di Calcio Molise. Richieste di collaborazione e informazioni sul progetto editoriale." />
+  <meta name="description" content="Contatti ufficiali di Calcio Molise. Richieste di collaborazione, sponsor e informazioni sul progetto editoriale." />
   <meta name="theme-color" content="#070A10" />
 
   <link rel="icon" type="image/png" href="2.png" />
@@ -25,7 +25,7 @@
   <!-- TOPBAR -->
   <header class="topbar" data-topbar>
     <div class="wrap topbar__inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="Vai alla Home di Calcio Molise">
         <img src="2.png" width="42" height="42" class="brand__logo" alt="Logo Calcio Molise" />
         <div class="brand__text">
           <div class="brand__title">Calcio Molise</div>
@@ -33,26 +33,27 @@
         </div>
       </a>
 
-      <nav class="nav nav--desktop">
+      <nav class="nav nav--desktop" aria-label="Navigazione principale">
         <a class="nav__item" href="index.html">Home</a>
         <a class="nav__item" href="progetto.html">Progetto</a>
         <a class="nav__item" href="sponsor.html">Sponsor</a>
         <a class="nav__item" href="media-kit.html">Media kit</a>
-        <a class="nav__item nav__cta is-active" href="contatti.html">Contatti</a>
+        <a class="nav__item nav__cta is-active" href="contatti.html" aria-current="page">Contatti</a>
       </nav>
 
+      <!-- MOBILE NAV -->
       <div class="nav nav--mobile">
-        <button class="nav__toggle" id="navToggle" aria-expanded="false">
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navDrawer">
           <span class="nav__toggleText">Menu</span>
-          <span class="nav__toggleIcon"></span>
+          <span class="nav__toggleIcon" aria-hidden="true"></span>
         </button>
 
         <div class="nav__overlay" id="navOverlay" hidden></div>
 
-        <aside class="nav__drawer" id="navDrawer" aria-hidden="true">
+        <aside class="nav__drawer" id="navDrawer" aria-hidden="true" aria-label="Menu mobile">
           <div class="nav__drawerHead">
             <div class="nav__drawerTitle">Calcio Molise</div>
-            <button class="nav__close" id="navClose">×</button>
+            <button class="nav__close" id="navClose" aria-label="Chiudi menu">×</button>
           </div>
 
           <div class="nav__group">
@@ -61,7 +62,7 @@
             <a class="nav__link" href="progetto.html">Progetto</a>
             <a class="nav__link" href="sponsor.html">Sponsor</a>
             <a class="nav__link" href="media-kit.html">Media kit</a>
-            <a class="nav__link is-active" href="contatti.html">Contatti</a>
+            <a class="nav__link is-active" href="contatti.html" aria-current="page">Contatti</a>
           </div>
 
           <div class="nav__drawerFoot">
@@ -79,65 +80,99 @@
         <p class="kicker">Contatti</p>
         <h1 class="hero__title">Richieste e collaborazioni</h1>
         <p class="hero__lead">
-          Per informazioni sul progetto o richieste di collaborazione.
+          Canali ufficiali per sponsor, club, aziende e media.
         </p>
+
+        <div class="hero__mini" aria-label="Scorciatoie contatto">
+          <a class="miniLink" href="mailto:calciomolise1@gmail.com">Email</a>
+          <a class="miniLink" href="https://www.instagram.com/calciomolise_official/" target="_blank" rel="noopener">Instagram</a>
+        </div>
       </div>
     </section>
 
-    <!-- CONTATTI -->
+    <!-- CONTATTI PRINCIPALI -->
     <section class="section">
       <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title">Canali ufficiali</h2>
+          <p class="section__desc">
+            Per facilitare i tempi di risposta, indica oggetto e riferimento (club/azienda).
+          </p>
+        </header>
+
         <div class="grid grid--2">
-          
           <!-- EMAIL -->
           <article class="card">
-            <h2>Email</h2>
-            <p class="muted">
-              Canale consigliato per aziende, attività e collaborazioni strutturate.
+            <h3>Email</h3>
+            <p>Canale consigliato per richieste sponsor, partnership e collaborazioni strutturate.</p>
+            <p style="margin-top:10px">
+              <a class="miniLink" href="mailto:calciomolise1@gmail.com" aria-label="Scrivi a calciomolise1@gmail.com">
+                calciomolise1@gmail.com
+              </a>
             </p>
-            <a class="contactLink" href="mailto:calciomolise1@gmail.com">
-              calciomolise1@gmail.com
-            </a>
           </article>
 
           <!-- INSTAGRAM -->
           <article class="card">
-            <h2>Instagram</h2>
-            <p class="muted">
-              Per un primo contatto diretto.
+            <h3>Instagram</h3>
+            <p>Per primo contatto, invio materiali e coordinamento rapido.</p>
+            <p style="margin-top:10px">
+              <a class="miniLink" target="_blank" rel="noopener" href="https://www.instagram.com/calciomolise_official/">
+                @calciomolise_official
+              </a>
             </p>
-            <a class="contactLink" target="_blank" href="https://www.instagram.com/calciomolise_official/">
-              @calciomolise_official
-            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINEE GUIDA MESSAGGIO -->
+    <section class="section section--soft">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title">Informazioni utili</h2>
+          <p class="section__desc">Elementi minimi per una valutazione rapida della richiesta.</p>
+        </header>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h3>Per sponsor e aziende</h3>
+            <p>Settore, obiettivo, periodo, area di interesse (Eccellenza/Promozione/Serie D).</p>
+          </article>
+
+          <article class="card">
+            <h3>Per club e addetti ai lavori</h3>
+            <p>Gara/competizione, materiale disponibile, referente, tempi e autorizzazioni.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- TESTO PRECOMPILATO -->
-    <section class="section section--soft">
+    <section class="section">
       <div class="wrap">
         <header class="section__head">
           <h2 class="section__title">Testo suggerito</h2>
-          <p class="section__desc">Per facilitare una risposta rapida e mirata.</p>
+          <p class="section__desc">Template sintetico per email o DM.</p>
         </header>
 
         <div class="card card--mono">
-<pre class="pre">
-Buonasera,
-sono interessato a ricevere informazioni sulle collaborazioni con Calcio Molise.
+<pre class="pre">Buonasera,
+scrivo per una richiesta di collaborazione con Calcio Molise.
 
-Settore:
-Periodo di interesse:
-</pre>
+Soggetto:
+Riferimento (club/azienda):
+Obiettivo:
+Periodo:
+Contatto:</pre>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER MICRO -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="wrap footer__fine">
-        Calcio Molise — Progetto editoriale indipendente<br>
+        Calcio Molise — Progetto editoriale indipendente<br />
         © <span id="year"></span>
       </div>
     </footer>
