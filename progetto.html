@@ -1,0 +1,283 @@
+<!-- progetto.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Progetto — Calcio Molise</title>
+  <meta name="description" content="Calcio Molise è un progetto editoriale indipendente sul calcio territoriale: visione, metodo, standard e distribuzione." />
+  <meta name="theme-color" content="#070A10" />
+
+  <link rel="icon" type="image/png" href="2.png" />
+  <link rel="apple-touch-icon" href="2.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Salta al contenuto</a>
+
+  <!-- TOPBAR -->
+  <header class="topbar" data-topbar>
+    <div class="wrap topbar__inner">
+      <a class="brand" href="index.html" aria-label="Home Calcio Molise">
+        <img src="2.png" width="42" height="42" class="brand__logo" alt="Logo Calcio Molise" />
+        <div class="brand__text">
+          <div class="brand__title">Calcio Molise</div>
+          <div class="brand__subtitle">La voce del calcio molisano</div>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="nav nav--desktop" aria-label="Menu principale">
+        <a class="nav__item" href="index.html">Home</a>
+        <a class="nav__item is-active" href="progetto.html">Progetto</a>
+        <a class="nav__item" href="sponsor.html">Sponsor</a>
+        <a class="nav__item" href="media-kit.html">Media kit</a>
+        <a class="nav__item nav__cta" href="contatti.html">Contatti</a>
+      </nav>
+
+      <!-- MOBILE NAV -->
+      <div class="nav nav--mobile">
+        <button class="nav__toggle" id="navToggle" type="button"
+                aria-expanded="false" aria-controls="navDrawer" aria-label="Apri menu">
+          <span class="nav__toggleText">Menu</span>
+          <span class="nav__toggleIcon" aria-hidden="true"></span>
+        </button>
+
+        <div class="nav__overlay" id="navOverlay" hidden></div>
+
+        <aside class="nav__drawer" id="navDrawer" aria-hidden="true">
+          <div class="nav__drawerHead">
+            <div class="nav__drawerTitle">Calcio Molise</div>
+            <button class="nav__close" id="navClose" type="button" aria-label="Chiudi menu">×</button>
+          </div>
+
+          <div class="nav__group">
+            <div class="nav__label">Pagine</div>
+            <a class="nav__link" href="index.html">Home</a>
+            <a class="nav__link is-active" href="progetto.html">Progetto</a>
+            <a class="nav__link" href="sponsor.html">Sponsor</a>
+            <a class="nav__link" href="media-kit.html">Media kit</a>
+            <a class="nav__link" href="contatti.html">Contatti</a>
+          </div>
+
+          <div class="nav__group">
+            <div class="nav__label">Canali</div>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">Instagram</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">Telegram</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61582794197484">Facebook</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@CalcioMolise">YouTube</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/calciomolise">Twitch</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://ko-fi.com/calciomolise">Donazioni</a>
+          </div>
+
+          <div class="nav__drawerFoot">
+            <a class="btn btn--primary btn--full" href="contatti.html">Richiedi informazioni</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO (page) -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero__grid">
+          <div class="hero__content">
+            <p class="kicker">Struttura editoriale · Metodo · Indipendenza</p>
+            <h1 class="hero__title">Progetto</h1>
+            <p class="hero__lead">
+              Calcio Molise è un progetto editoriale indipendente sul calcio territoriale.
+              Formati informativi essenziali, riconoscibili e ripetibili. Distribuzione multi-canale.
+            </p>
+
+            <div class="hero__cta" role="group" aria-label="Azioni progetto">
+              <a class="btn" href="media-kit.html">Apri media kit</a>
+              <a class="btn btn--primary" href="sponsor.html">Area sponsor</a>
+              <a class="btn btn--ghost" href="contatti.html">Contatti</a>
+            </div>
+
+            <div class="hero__mini">
+              <a class="miniLink" href="#metodo">Metodo</a>
+              <a class="miniLink" href="#standard">Standard</a>
+              <a class="miniLink" href="#indipendenza">Indipendenza</a>
+            </div>
+          </div>
+
+          <div class="hero__panel">
+            <div class="panel">
+              <div class="panel__title">In sintesi</div>
+              <div class="panel__list">
+                <div class="panel__item">
+                  <span>Cos’è</span>
+                  <em>Informazione sportiva locale ordinata e continuativa</em>
+                </div>
+                <div class="panel__item">
+                  <span>Come</span>
+                  <em>Formati ricorrenti, gerarchia chiara, pubblicazione programmata</em>
+                </div>
+                <div class="panel__item">
+                  <span>Dove</span>
+                  <em>Instagram · Telegram · Facebook (estensioni: YouTube/Twitch)</em>
+                </div>
+                <a class="panel__item" href="media-kit.html">
+                  <span>Numeri</span>
+                  <em>Dati sintetici nel media kit</em>
+                </a>
+                <a class="panel__item" href="sponsor.html">
+                  <span>Partnership</span>
+                  <em>Integrazioni editoriali sobrie</em>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSIZIONAMENTO -->
+    <section class="section" id="indipendenza">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title">Indipendenza editoriale</h2>
+          <p class="section__desc">
+            Calcio Molise non è un ufficio stampa e non è un canale ufficiale delle società.
+            Il progetto mantiene autonomia di pubblicazione, tono e formati.
+          </p>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <h3>Neutro</h3>
+            <p>Stile informativo. Nessun linguaggio da tifo. Nessun rumore.</p>
+          </article>
+          <article class="card">
+            <h3>Continuativo</h3>
+            <p>Non “post singoli”: un sistema di uscite ricorrenti e riconoscibili.</p>
+          </article>
+          <article class="card">
+            <h3>Territoriale</h3>
+            <p>Focus sul calcio locale. Servizio, risultati, contesto e aggiornamenti.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- METODO -->
+    <section class="section" id="metodo">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title">Metodo</h2>
+          <p class="section__desc">
+            Formati semplici. Ripetibili. Facili da leggere. Facili da riconoscere.
+          </p>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <h3>Formati</h3>
+            <p>Matchday, Full Time, MVP, Classifiche, Recap. Pubblicazione ordinata.</p>
+          </article>
+          <article class="card">
+            <h3>Distribuzione</h3>
+            <p>Instagram come vetrina. Telegram come flusso. Facebook come estensione.</p>
+          </article>
+          <article class="card">
+            <h3>Processo</h3>
+            <p>Raccolta dati → impaginazione → pubblicazione → archiviazione.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STANDARD -->
+    <section class="section" id="standard">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title">Standard</h2>
+          <p class="section__desc">
+            Coerenza visiva e testuale. Gerarchie tipografiche. Scelte ripetibili.
+          </p>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <h3>Testo</h3>
+            <p>Frasi brevi. Informazioni chiare. Zero spiegazioni inutili.</p>
+          </article>
+          <article class="card">
+            <h3>Grafica</h3>
+            <p>Sfondo scuro. Poche parole. Logo discreto. “Sponsored by” quando previsto.</p>
+          </article>
+          <article class="card">
+            <h3>Affidabilità</h3>
+            <p>Uscite coerenti e verificabili. Report e screenshot insight per partner.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERCHÉ È UTILE -->
+    <section class="section">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title">Cosa produce</h2>
+          <p class="section__desc">
+            Contenuti di servizio e copertura editoriale. Non intrattenimento.
+          </p>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <h3>Informazione</h3>
+            <p>Notizie, risultati, aggiornamenti. Lettura veloce. Contesto essenziale.</p>
+          </article>
+          <article class="card">
+            <h3>Ordine</h3>
+            <p>Recap settimanali e formati ricorrenti per seguire il campionato.</p>
+          </article>
+          <article class="card">
+            <h3>Valore sponsor</h3>
+            <p>Integrazione sobria dentro formati ripetuti. Presenza continuativa.</p>
+          </article>
+        </div>
+
+        <div class="section__cta">
+          <a class="btn btn--primary" href="sponsor.html">Vai a Sponsor</a>
+          <a class="btn" href="media-kit.html">Apri Media kit</a>
+          <a class="btn btn--ghost" href="contatti.html">Contatti</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="footer__left">
+          <div class="footer__brand">Calcio Molise</div>
+          <div class="footer__sub">La voce del calcio molisano</div>
+        </div>
+
+        <div class="footer__right">
+          <a href="index.html">Home</a>
+          <a href="sponsor.html">Sponsor</a>
+          <a href="media-kit.html">Media kit</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+      </div>
+
+      <div class="wrap footer__fine">
+        © <span id="year"></span> Calcio Molise · Tutti i diritti riservati
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

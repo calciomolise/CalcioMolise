@@ -1,103 +1,86 @@
+// script.js
 document.addEventListener("DOMContentLoaded", () => {
-  // anno footer
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
+  // Year
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
 
-  // contatori
-  const counters = document.querySelectorAll("[data-count]");
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // ===== Mobile Drawer Menu =====
+  const toggle = document.getElementById("navToggle");
+  const drawer = document.getElementById("navDrawer");
+  const overlay = document.getElementById("navOverlay");
+  const closeBtn = document.getElementById("navClose");
 
-  const animate = (el) => {
-    const target = parseInt(el.getAttribute("data-count"), 10) || 0;
-    const suffix = el.getAttribute("data-suffix") || "";
-
-    // se riduzione movimenti attiva, mostra subito
-    if (prefersReduced) {
-      el.textContent = target.toLocaleString("it-IT") + suffix;
-      return;
-    }
-
-    let current = 0;
-    const steps = 60;
-    const step = Math.max(1, Math.ceil(target / steps));
-
-    const tick = () => {
-      current += step;
-
-      if (current >= target) {
-        el.textContent = target.toLocaleString("it-IT") + suffix;
-      } else {
-        el.textContent = current.toLocaleString("it-IT") + suffix;
-        requestAnimationFrame(tick);
-      }
-    };
-
-    tick();
+  const openMenu = () => {
+    if (!drawer || !overlay || !toggle) return;
+    overlay.hidden = false;
+    drawer.setAttribute("aria-hidden", "false");
+    toggle.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
   };
 
-  // anima solo quando entrano in vista
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animate(entry.target);
-          observer.unobserve(entry.target);
+  const closeMenu = () => {
+    if (!drawer || !overlay || !toggle) return;
+    overlay.hidden = true;
+    drawer.setAttribute("aria-hidden", "true");
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
+
+  if (toggle && drawer && overlay) {
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener("click", closeMenu);
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+  }
+
+  window.addEventListener("resize", () => {
+    // evita glitch quando cambi viewport
+    closeMenu();
+  });
+
+  // ===== Count-up Stats =====
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fmt = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+  const animateCount = (el) => {
+    const target = parseInt(el.getAttribute("data-count") || "0", 10);
+    const suffix = el.getAttribute("data-suffix") || "";
+    if (!target) { el.textContent = "0" + suffix; return; }
+
+    if (reduceMotion) { el.textContent = fmt(target) + suffix; return; }
+
+    const duration = 900;
+    const start = performance.now();
+
+    const tick = (t) => {
+      const p = Math.min((t - start) / duration, 1);
+      const value = Math.floor(target * p);
+      el.textContent = fmt(value) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const counters = document.querySelectorAll("[data-count]");
+  if (counters.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          animateCount(e.target);
+          io.unobserve(e.target);
         }
       });
-    },
-    { threshold: 0.6 }
-  );
+    }, { threshold: 0.35 });
 
-  counters.forEach((c) => observer.observe(c));
+    counters.forEach((c) => io.observe(c));
+  }
 });
-
-// ===== Richiedi informazioni: precompila Email in base al pacchetto =====
-const pkg = document.getElementById("pkg");
-const mailLink = document.getElementById("mailLink");
-const dmLink = document.getElementById("dmLink");
-
-const buildEmail = (level) => {
-  const subject =
-    "Richiesta informazioni - Calcio Molise" +
-    (level ? " (" + level + ")" : "");
-
-  const bodyLines = [
-    "Ciao Calcio Molise,",
-    "",
-    "Sono [Nome - Azienda].",
-    "Settore: [settore]",
-    "Obiettivo: [visibilità / brand / altro]",
-    level ? "Livello desiderato: " + level : "",
-    "",
-    "Potete inviarmi una proposta di collaborazione?",
-    "",
-    "Grazie,",
-    "[Firma]"
-  ];
-
-  const body = bodyLines.filter(Boolean).join("\n");
-
-  return (
-    "mailto:calciomolise1@gmail.com" +
-    "?subject=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body)
-  );
-};
-
-const updateLinks = () => {
-  const level = pkg ? pkg.value : "";
-
-  if (mailLink) {
-    mailLink.href = buildEmail(level);
-  }
-
-  // DM Instagram: link diretto (no testo precompilato, più affidabile)
-  if (dmLink) {
-    dmLink.href = "https://ig.me/m/calciomolise_official";
-  }
-};
-
-if (pkg) {
-  pkg.addEventListener("change", updateLinks);
-  updateLinks();
-}

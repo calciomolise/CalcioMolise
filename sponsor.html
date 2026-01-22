@@ -1,11 +1,12 @@
+<!-- sponsor.html -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sponsor — Calcio Molise</title>
-  <meta name="description" content="Area sponsor Calcio Molise: come funziona, livelli di partnership, rappresentazione del brand e richiesta proposta." />
-  <meta name="robots" content="index,follow" />
+
+  <title>Sponsor & Partnership — Calcio Molise</title>
+  <meta name="description" content="Partnership editoriali sobrie e continuative. Presenza integrata nei contenuti, con formati ricorrenti e report." />
   <meta name="theme-color" content="#070A10" />
 
   <link rel="icon" type="image/png" href="2.png" />
@@ -22,22 +23,32 @@
 <body>
   <a class="skip" href="#main">Salta al contenuto</a>
 
-  <!-- HEADER (shared) -->
+  <!-- TOPBAR -->
   <header class="topbar" data-topbar>
     <div class="wrap topbar__inner">
       <a class="brand" href="index.html" aria-label="Home Calcio Molise">
-        <img src="2.png" alt="Logo Calcio Molise" class="brand__logo" width="42" height="42" loading="eager" decoding="async" />
+        <img src="2.png" width="42" height="42" class="brand__logo" alt="Logo Calcio Molise" />
         <div class="brand__text">
           <div class="brand__title">Calcio Molise</div>
           <div class="brand__subtitle">La voce del calcio molisano</div>
         </div>
       </a>
 
-      <nav class="nav" aria-label="Navigazione principale">
-        <button class="nav__toggle" type="button" id="navToggle"
+      <!-- DESKTOP NAV -->
+      <nav class="nav nav--desktop" aria-label="Menu principale">
+        <a class="nav__item" href="index.html">Home</a>
+        <a class="nav__item" href="progetto.html">Progetto</a>
+        <a class="nav__item is-active" href="sponsor.html">Sponsor</a>
+        <a class="nav__item" href="media-kit.html">Media kit</a>
+        <a class="nav__item nav__cta" href="contatti.html">Contatti</a>
+      </nav>
+
+      <!-- MOBILE NAV -->
+      <div class="nav nav--mobile">
+        <button class="nav__toggle" id="navToggle" type="button"
                 aria-expanded="false" aria-controls="navDrawer" aria-label="Apri menu">
           <span class="nav__toggleText">Menu</span>
-          <span class="nav__toggleIcon" aria-hidden="true">≡</span>
+          <span class="nav__toggleIcon" aria-hidden="true"></span>
         </button>
 
         <div class="nav__overlay" id="navOverlay" hidden></div>
@@ -45,231 +56,338 @@
         <aside class="nav__drawer" id="navDrawer" aria-hidden="true">
           <div class="nav__drawerHead">
             <div class="nav__drawerTitle">Calcio Molise</div>
-            <button class="nav__close" type="button" id="navClose" aria-label="Chiudi menu">×</button>
+            <button class="nav__close" id="navClose" type="button" aria-label="Chiudi menu">×</button>
           </div>
 
           <div class="nav__group">
             <div class="nav__label">Pagine</div>
             <a class="nav__link" href="index.html">Home</a>
+            <a class="nav__link" href="progetto.html">Progetto</a>
             <a class="nav__link is-active" href="sponsor.html">Sponsor</a>
-            <a class="nav__link" href="contatti.html">Richiedi informazioni</a>
+            <a class="nav__link" href="media-kit.html">Media kit</a>
+            <a class="nav__link" href="contatti.html">Contatti</a>
           </div>
 
           <div class="nav__group">
             <div class="nav__label">Canali</div>
             <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">Instagram</a>
             <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">Telegram</a>
-            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@calciomolise">YouTube</a>
-            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://twitch.tv/calciomolise">Twitch</a>
             <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61582794197484">Facebook</a>
-            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://ko-fi.com/I2I01PXALC">Donazioni</a>
-          </div>
-
-          <div class="nav__group">
-            <div class="nav__label">Contatto</div>
-            <a class="nav__link" href="mailto:calciomolise1@gmail.com?subject=Richiesta%20informazioni%20-%20Calcio%20Molise">Email</a>
-            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">DM Instagram</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@CalcioMolise">YouTube</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/calciomolise">Twitch</a>
+            <a class="nav__link" target="_blank" rel="noopener noreferrer" href="https://ko-fi.com/calciomolise">Donazioni</a>
           </div>
 
           <div class="nav__drawerFoot">
-            <a class="btn btn--primary btn--full" href="contatti.html">Richiedi informazioni</a>
+            <a class="btn btn--primary btn--full" href="contatti.html">Richiedi proposta</a>
           </div>
         </aside>
-      </nav>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="pagehead">
+    <!-- HERO -->
+    <section class="hero">
       <div class="wrap">
-        <p class="kicker">Partnership · Presenza · Report</p>
-        <h1 class="pagehead__title">Area sponsor</h1>
-        <p class="pagehead__lead">
-          Integrazione del brand con intensità crescente in base al livello concordato.
-          Presenza sobria, coerente e continuativa: prima la credibilità, poi la visibilità.
-        </p>
+        <div class="hero__grid">
+          <div class="hero__content">
+            <p class="kicker">Sponsor & Partnership</p>
+            <h1 class="hero__title">Presenza integrata nei contenuti</h1>
+            <p class="hero__lead">
+              Integrazioni editoriali sobrie e continuative. Nessuna pubblicità invasiva.
+              Placement ripetibili dentro formati informativi.
+            </p>
 
-        <div class="pagehead__cta">
-          <a class="btn btn--primary" href="contatti.html">Richiedi informazioni</a>
-          <a class="btn" href="#livelli">Vedi livelli</a>
+            <div class="hero__cta" role="group" aria-label="Azioni sponsor">
+              <a class="btn btn--primary" href="contatti.html">Richiedi proposta</a>
+              <a class="btn" href="media-kit.html">Apri media kit</a>
+            </div>
+
+            <div class="hero__mini">
+              <a class="miniLink" href="#cosa-ottieni">Cosa ottieni</a>
+              <a class="miniLink" href="#esempi">Esempi</a>
+              <a class="miniLink" href="#pacchetti">Pacchetti</a>
+              <a class="miniLink" href="#processo">Processo</a>
+            </div>
+          </div>
+
+          <div class="hero__panel">
+            <div class="panel">
+              <div class="panel__title">Nota operativa</div>
+              <div class="panel__list">
+                <div class="panel__item">
+                  <span>Formato</span>
+                  <em>“Sponsored by” discreto, integrato nel layout</em>
+                </div>
+                <div class="panel__item">
+                  <span>Durata</span>
+                  <em>Collaborazioni continuative, non spot</em>
+                </div>
+                <div class="panel__item">
+                  <span>Distribuzione</span>
+                  <em>Instagram (2.5k+), Telegram, Facebook</em>
+                </div>
+                <div class="panel__item">
+                  <span>Report</span>
+                  <em>Screenshot insight + riepilogo uscite</em>
+                </div>
+                <a class="panel__item" href="#partner">
+                  <span>Partner</span>
+                  <em>Main Partner — stagione in corso</em>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- COSA OTTIENE UNO SPONSOR -->
+    <section class="section" id="cosa-ottieni">
       <div class="wrap">
         <header class="section__head">
-          <h2 class="section__title">Come funziona</h2>
-          <p class="section__desc">Processo semplice e tracciabile.</p>
-        </header>
-
-        <div class="stack">
-          <article class="card">
-            <h3>1) Proposta</h3>
-            <p>Definizione del livello + canali inclusi + calendario output.</p>
-          </article>
-
-          <article class="card">
-            <h3>2) Asset</h3>
-            <p>Logo + link + descrizione breve. Integrazione coerente (posizione e stile costanti).</p>
-          </article>
-
-          <article class="card">
-            <h3>3) Pubblicazione</h3>
-            <p>Inserimenti programmati nei contenuti previsti dal livello scelto.</p>
-          </article>
-
-          <article class="card">
-            <h3>4) Report</h3>
-            <p>Riepilogo pubblicazioni + screenshot insight principali.</p>
-          </article>
-        </div>
-
-        <div class="note">
-          <strong>Regola:</strong> zero spam. La presenza del brand è editoriale e pulita.
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="livelli">
-      <div class="wrap">
-        <header class="section__head">
-          <h2 class="section__title">Livelli di partnership</h2>
+          <h2 class="section__title">Cosa ottiene uno sponsor</h2>
           <p class="section__desc">
-            Nessun prezzo pubblicato: invio proposta su misura. Ogni livello aumenta la distribuzione del brand.
+            Presenza ordinata dentro formati ricorrenti. Scelta dei placement in base al livello.
           </p>
         </header>
 
-        <div class="pricing">
-          <article class="price">
-            <div class="price__top">
-              <h3>Base</h3>
-              <p class="price__tag">Presenza essenziale</p>
-            </div>
-            <div class="price__body">
-              <ul>
-                <li>Integrazione su una tipologia di contenuto</li>
-                <li>Stories: presenza limitata</li>
-                <li>Report mensile light</li>
-              </ul>
-              <div class="price__foot">
-                <a class="btn btn--primary btn--full" href="contatti.html?pkg=Base">Richiedi informazioni</a>
-              </div>
-            </div>
+        <div class="grid grid--3">
+          <article class="card">
+            <h3>Placement editoriali</h3>
+            <p>Matchday, Full Time, MVP, Classifiche, Recap. Formati ripetibili.</p>
           </article>
-
-          <article class="price price--featured">
-            <div class="badge">Consigliato</div>
-            <div class="price__top">
-              <h3>Plus</h3>
-              <p class="price__tag">Visibilità continuativa</p>
-            </div>
-            <div class="price__body">
-              <ul>
-                <li>Logo su più output ricorrenti</li>
-                <li>Stories programmate</li>
-                <li>Report mensile</li>
-              </ul>
-              <div class="price__foot">
-                <a class="btn btn--primary btn--full" href="contatti.html?pkg=Plus">Richiedi informazioni</a>
-              </div>
-            </div>
+          <article class="card">
+            <h3>Stories</h3>
+            <p>Slot pianificati. Rimando ai contenuti e copertura delle giornate.</p>
           </article>
-
-          <article class="price">
-            <div class="price__top">
-              <h3>Premium</h3>
-              <p class="price__tag">Partner strutturale</p>
-            </div>
-            <div class="price__body">
-              <ul>
-                <li>Presenza ricorrente su contenuti chiave</li>
-                <li>Stories dedicate</li>
-                <li>Telegram: inserimenti programmati</li>
-                <li>Report più completo</li>
-              </ul>
-              <div class="price__foot">
-                <a class="btn btn--primary btn--full" href="contatti.html?pkg=Premium">Richiedi informazioni</a>
-              </div>
-            </div>
+          <article class="card">
+            <h3>Telegram</h3>
+            <p>Citazioni + link. Presenza lineare nel flusso informativo.</p>
+          </article>
+          <article class="card">
+            <h3>Eventi speciali</h3>
+            <p>Derby, coppe, finali. Copertura dedicata se attiva nel periodo.</p>
+          </article>
+          <article class="card">
+            <h3>Report</h3>
+            <p>Screenshot insight + riepilogo uscite. Tracciabilità e continuità.</p>
+          </article>
+          <article class="card">
+            <h3>Coerenza</h3>
+            <p>Brand integrato senza “pubblicità”. Stessa struttura, stessi standard.</p>
           </article>
         </div>
 
         <div class="note">
-          Se vuoi partire senza vincoli lunghi: possibile collaborazione “evento” (periodo breve) con output dedicati.
+          <strong>Chiarimento:</strong> Calcio Molise non è un ufficio stampa né un canale ufficiale delle società.
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- ESEMPI -->
+    <section class="section" id="esempi">
       <div class="wrap">
         <header class="section__head">
-          <h2 class="section__title">Rappresentazione del brand</h2>
-          <p class="section__desc">Il brand viene integrato con intensità crescente in base al livello.</p>
+          <h2 class="section__title">Esempi di integrazione</h2>
+          <p class="section__desc">Esempi tipici di placement. Visual placeholder sostituibile con mock o screenshot.</p>
         </header>
 
-        <div class="stack">
-          <article class="card">
-            <h3>Grafiche</h3>
-            <p>Logo discreto in posizione costante, coerente con lo stile.</p>
+        <div class="grid grid--5">
+          <article class="card card--example">
+            <div class="example__ph" aria-hidden="true">
+              <span>Matchday</span>
+              <small>Placeholder visivo</small>
+            </div>
+            <p class="example__desc">Calendario e info partita. “Sponsored by” discreto.</p>
           </article>
 
-          <article class="card">
-            <h3>Stories</h3>
-            <p>Slot dedicati e programmati, testo breve e controllato.</p>
+          <article class="card card--example">
+            <div class="example__ph" aria-hidden="true">
+              <span>Full Time</span>
+              <small>Placeholder visivo</small>
+            </div>
+            <p class="example__desc">Risultato finale e breve contesto. Presenza stabile.</p>
           </article>
 
-          <article class="card">
-            <h3>Telegram</h3>
-            <p>Inserimenti programmati (livelli superiori): citazione + link.</p>
+          <article class="card card--example">
+            <div class="example__ph" aria-hidden="true">
+              <span>MVP</span>
+              <small>Placeholder visivo</small>
+            </div>
+            <p class="example__desc">Formato riconoscibile. Brand in area dedicata.</p>
           </article>
-        </div>
 
-        <div class="ctaRow">
-          <a class="btn btn--primary" href="contatti.html">Richiedi informazioni</a>
-          <a class="btn" href="index.html#link">Vai ai link ufficiali</a>
+          <article class="card card--example">
+            <div class="example__ph" aria-hidden="true">
+              <span>Classifica</span>
+              <small>Placeholder visivo</small>
+            </div>
+            <p class="example__desc">Aggiornamento ordinato. Visibilità ricorrente.</p>
+          </article>
+
+          <article class="card card--example">
+            <div class="example__ph" aria-hidden="true">
+              <span>Reel / Video</span>
+              <small>Placeholder visivo</small>
+            </div>
+            <p class="example__desc">Clip e recap. Inserimento sobrio in apertura o chiusura.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER (shared) -->
+    <!-- PARTNER -->
+    <section class="section" id="partner">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title">Partner attuali</h2>
+          <p class="section__desc">Presenze istituzionali. Collaborazioni continuative.</p>
+        </header>
+
+        <div class="grid grid--2">
+          <article class="card card--partner">
+            <div class="partner__head">
+              <div>
+                <h3>Euro Edil Grande</h3>
+                <p class="muted">Main Partner — stagione in corso</p>
+              </div>
+              <span class="badge">Main Partner</span>
+            </div>
+            <p>
+              Presenza integrata nei formati principali e nelle uscite programmate.
+              Trattamento editoriale sobrio e riconoscibile.
+            </p>
+            <a class="textLink" href="#" aria-disabled="true" onclick="return false;">Link partner (opzionale)</a>
+          </article>
+
+          <article class="card">
+            <h3>Slot disponibili</h3>
+            <p>
+              Le collaborazioni vengono definite per durata, formati e livello di presenza.
+              Nessun listino pubblico.
+            </p>
+            <div class="card__cta">
+              <a class="btn btn--primary" href="contatti.html">Richiedi proposta</a>
+              <a class="btn" href="media-kit.html">Apri media kit</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACCHETTI -->
+    <section class="section" id="pacchetti">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title">Livelli di partnership</h2>
+          <p class="section__desc">Struttura semplice. Definizione su richiesta.</p>
+        </header>
+
+        <div class="grid grid--4">
+          <article class="card">
+            <h3>Essenziale</h3>
+            <p>Presenza ordinata su formati selezionati. Frequenza definita.</p>
+          </article>
+          <article class="card">
+            <h3>Continuativo</h3>
+            <p>Visibilità costante su più formati. Copertura programmata.</p>
+          </article>
+          <article class="card">
+            <h3>Dominante</h3>
+            <p>Presenza estesa e prioritaria. Integrazione su più asset.</p>
+          </article>
+          <article class="card">
+            <h3>Evento</h3>
+            <p>Copertura speciale per periodi specifici (coppe, derby, finali).</p>
+          </article>
+        </div>
+
+        <div class="section__cta">
+          <a class="btn btn--primary" href="contatti.html">Richiedi proposta</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSO -->
+    <section class="section" id="processo">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title">Processo</h2>
+          <p class="section__desc">Metodo chiaro. Nessun passaggio superfluo.</p>
+        </header>
+
+        <div class="grid grid--5">
+          <article class="card card--step">
+            <div class="step__n">01</div>
+            <h3>Richiesta</h3>
+            <p>Settore, obiettivo, periodo.</p>
+          </article>
+          <article class="card card--step">
+            <div class="step__n">02</div>
+            <h3>Definizione livello</h3>
+            <p>Formati e frequenza.</p>
+          </article>
+          <article class="card card--step">
+            <div class="step__n">03</div>
+            <h3>Asset / brief</h3>
+            <p>Logo, linee guida, riferimenti.</p>
+          </article>
+          <article class="card card--step">
+            <div class="step__n">04</div>
+            <h3>Uscite programmate</h3>
+            <p>Calendario e pubblicazioni.</p>
+          </article>
+          <article class="card card--step">
+            <div class="step__n">05</div>
+            <h3>Report</h3>
+            <p>Screenshot insight + riepilogo.</p>
+          </article>
+        </div>
+
+        <div class="note">
+          Le collaborazioni non hanno un listino pubblico. Dipendono da durata, formati e livello di presenza.
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATTI (CTA finale) -->
+    <section class="section section--final">
+      <div class="wrap">
+        <div class="final">
+          <div>
+            <h2>Richiedi proposta</h2>
+            <p class="muted">Email o DM Instagram. Risposta in base a disponibilità e periodo.</p>
+          </div>
+          <div class="final__cta">
+            <a class="btn btn--primary" href="contatti.html">Vai ai contatti</a>
+            <a class="btn" href="media-kit.html">Apri media kit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="wrap footer__inner">
-        <div class="footer__brand">
-          <div class="footer__title">Calcio Molise</div>
+        <div class="footer__left">
+          <div class="footer__brand">Calcio Molise</div>
           <div class="footer__sub">La voce del calcio molisano</div>
         </div>
 
-        <div class="footer__cols">
-          <div class="footer__col">
-            <div class="footer__label">Pagine</div>
-            <a class="footer__link" href="index.html">Home</a>
-            <a class="footer__link" href="sponsor.html">Sponsor</a>
-            <a class="footer__link" href="contatti.html">Richiedi informazioni</a>
-          </div>
-
-          <div class="footer__col">
-            <div class="footer__label">Canali</div>
-            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/calciomolise_official/">Instagram</a>
-            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://t.me/calciomolise">Telegram</a>
-            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@calciomolise">YouTube</a>
-            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://twitch.tv/calciomolise">Twitch</a>
-          </div>
-
-          <div class="footer__col">
-            <div class="footer__label">Contatto</div>
-            <a class="footer__link" href="mailto:calciomolise1@gmail.com?subject=Richiesta%20informazioni%20-%20Calcio%20Molise">Email</a>
-            <a class="footer__link" target="_blank" rel="noopener noreferrer" href="https://ig.me/m/calciomolise_official">DM Instagram</a>
-          </div>
+        <div class="footer__right">
+          <a href="index.html">Home</a>
+          <a href="progetto.html">Progetto</a>
+          <a href="media-kit.html">Media kit</a>
+          <a href="contatti.html">Contatti</a>
         </div>
       </div>
 
       <div class="wrap footer__fine">
-        <span class="muted">© <span id="year"></span> Calcio Molise · Tutti i diritti riservati</span>
+        © <span id="year"></span> Calcio Molise · Tutti i diritti riservati
       </div>
     </footer>
-
-    <a class="fab" href="contatti.html" aria-label="Richiedi informazioni">Richiedi informazioni</a>
   </main>
 </body>
 </html>
